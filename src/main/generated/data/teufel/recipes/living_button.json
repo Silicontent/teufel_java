@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "teufel:living_planks"
+    }
+  ],
+  "result": {
+    "item": "teufel:living_button"
+  }
+}

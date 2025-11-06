@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "C",
+    "S"
+  ],
+  "result": {
+    "item": "teufel:copper_dagger"
+  },
+  "show_notification": true
+}

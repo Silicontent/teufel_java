@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "teufel:inferno"
+    },
+    {
+      "item": "teufel:frostbite"
+    },
+    {
+      "item": "teufel:life_essence"
+    }
+  ],
+  "result": {
+    "item": "teufel:deity_blade"
+  }
+}

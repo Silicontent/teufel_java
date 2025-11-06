@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "teufel:sculken_ingot"
+    },
+    "S": {
+      "item": "teufel:reinforced_stick"
+    }
+  },
+  "pattern": [
+    "C",
+    "C",
+    "S"
+  ],
+  "result": {
+    "item": "teufel:deepslash"
+  },
+  "show_notification": true
+}

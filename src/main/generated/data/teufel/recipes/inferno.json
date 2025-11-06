@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": {
+      "item": "teufel:hellfire_ingot"
+    },
+    "S": {
+      "item": "teufel:reinforced_stick"
+    }
+  },
+  "pattern": [
+    "H",
+    "H",
+    "S"
+  ],
+  "result": {
+    "item": "teufel:inferno"
+  },
+  "show_notification": true
+}

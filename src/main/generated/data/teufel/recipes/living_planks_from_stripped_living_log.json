@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "teufel:stripped_living_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "teufel:living_planks"
+  }
+}

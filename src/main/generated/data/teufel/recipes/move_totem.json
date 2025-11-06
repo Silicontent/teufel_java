@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "teufel:speed_totem"
+    },
+    {
+      "item": "teufel:strength_totem"
+    },
+    {
+      "item": "teufel:jump_totem"
+    },
+    {
+      "item": "teufel:peace_essence"
+    }
+  ],
+  "result": {
+    "item": "teufel:move_totem"
+  }
+}

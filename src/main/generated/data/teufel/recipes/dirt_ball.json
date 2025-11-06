@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "minecraft:dirt"
+    }
+  ],
+  "result": {
+    "item": "teufel:dirt_ball"
+  }
+}

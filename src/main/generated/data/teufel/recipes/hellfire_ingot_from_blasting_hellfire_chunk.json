@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "group": "hellfire_ingot",
+  "ingredient": {
+    "item": "teufel:hellfire_chunk"
+  },
+  "result": "teufel:hellfire_ingot"
+}

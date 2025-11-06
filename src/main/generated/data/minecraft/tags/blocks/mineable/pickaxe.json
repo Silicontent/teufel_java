@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "teufel:hellfire_ore",
+    "teufel:hellfire_block",
+    "teufel:terminite_block",
+    "teufel:sculken_block",
+    "teufel:teufel_block"
+  ]
+}

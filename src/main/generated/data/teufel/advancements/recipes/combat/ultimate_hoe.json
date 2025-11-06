@@ -1,0 +1,87 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_death_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:death_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_life_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:life_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_nether_star": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:nether_star"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pain_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:pain_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_peace_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:peace_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:ultimate_hoe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_nether_star",
+      "has_life_essence",
+      "has_death_essence",
+      "has_peace_essence",
+      "has_pain_essence",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:ultimate_hoe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

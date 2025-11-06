@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "teufel:reinforced_stick"
+    },
+    "T": {
+      "item": "teufel:terminite_ingot"
+    }
+  },
+  "pattern": [
+    "T",
+    "T",
+    "S"
+  ],
+  "result": {
+    "item": "teufel:terminus"
+  },
+  "show_notification": true
+}

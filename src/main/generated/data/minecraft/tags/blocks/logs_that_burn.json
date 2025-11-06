@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "teufel:living_log",
+    "teufel:living_wood",
+    "teufel:stripped_living_log",
+    "teufel:stripped_living_wood"
+  ]
+}

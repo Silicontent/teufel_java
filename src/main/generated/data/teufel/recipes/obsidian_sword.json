@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "F": {
+      "item": "teufel:obsidian_fragment"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "S": {
+      "item": "teufel:reinforced_stick"
+    }
+  },
+  "pattern": [
+    "F",
+    "O",
+    "S"
+  ],
+  "result": {
+    "item": "teufel:obsidian_sword"
+  },
+  "show_notification": true
+}

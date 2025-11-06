@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "teufel:block/living_pressure_plate"
+    },
+    "powered=true": {
+      "model": "teufel:block/living_pressure_plate_down"
+    }
+  }
+}

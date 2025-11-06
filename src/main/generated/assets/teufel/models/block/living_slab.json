@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "teufel:block/living_planks",
+    "side": "teufel:block/living_planks",
+    "top": "teufel:block/living_planks"
+  }
+}

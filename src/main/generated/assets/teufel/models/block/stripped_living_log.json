@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "teufel:block/stripped_living_log_top",
+    "side": "teufel:block/stripped_living_log"
+  }
+}

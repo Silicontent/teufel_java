@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "teufel:frost_essence"
+    },
+    "I": {
+      "item": "minecraft:ice"
+    },
+    "S": {
+      "item": "teufel:reinforced_stick"
+    }
+  },
+  "pattern": [
+    "E",
+    "I",
+    "S"
+  ],
+  "result": {
+    "item": "teufel:frostbite"
+  },
+  "show_notification": true
+}

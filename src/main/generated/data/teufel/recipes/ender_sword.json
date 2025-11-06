@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "teufel:ultim_eye"
+    },
+    "S": {
+      "item": "teufel:reinforced_stick"
+    }
+  },
+  "pattern": [
+    "E",
+    "E",
+    "S"
+  ],
+  "result": {
+    "item": "teufel:ender_sword"
+  },
+  "show_notification": true
+}

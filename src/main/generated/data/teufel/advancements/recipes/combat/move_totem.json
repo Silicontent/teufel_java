@@ -1,0 +1,74 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jump_totem": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:jump_totem"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_peace_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:peace_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_speed_totem": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:speed_totem"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_strength_totem": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:strength_totem"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:move_totem"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_speed_totem",
+      "has_strength_totem",
+      "has_jump_totem",
+      "has_peace_essence",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:move_totem"
+    ]
+  },
+  "sends_telemetry_event": false
+}

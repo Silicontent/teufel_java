@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "teufel:sculken_block"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "teufel:sculken_ingot"
+  }
+}

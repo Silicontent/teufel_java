@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "tag": "minecraft:hoes"
+    },
+    {
+      "item": "teufel:life_essence"
+    },
+    {
+      "item": "teufel:death_essence"
+    },
+    {
+      "item": "teufel:peace_essence"
+    },
+    {
+      "item": "teufel:pain_essence"
+    }
+  ],
+  "result": {
+    "item": "teufel:ultimate_hoe"
+  }
+}

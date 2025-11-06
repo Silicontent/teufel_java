@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "teufel:block/living_slab"
+    },
+    "type=double": {
+      "model": "teufel:block/living_planks"
+    },
+    "type=top": {
+      "model": "teufel:block/living_slab_top"
+    }
+  }
+}

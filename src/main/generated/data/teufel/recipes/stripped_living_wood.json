@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "L": {
+      "item": "teufel:stripped_living_log"
+    }
+  },
+  "pattern": [
+    "LL",
+    "LL"
+  ],
+  "result": {
+    "count": 3,
+    "item": "teufel:stripped_living_wood"
+  },
+  "show_notification": true
+}

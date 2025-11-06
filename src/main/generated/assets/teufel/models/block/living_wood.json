@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "teufel:block/living_log",
+    "side": "teufel:block/living_log"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "teufel:block/living_door_bottom",
+    "top": "teufel:block/living_door_top"
+  }
+}

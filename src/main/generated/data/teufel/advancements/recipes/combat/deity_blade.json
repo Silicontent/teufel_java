@@ -1,0 +1,61 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_frostbite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:frostbite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_inferno": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:inferno"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_life_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:life_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:deity_blade"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_inferno",
+      "has_frostbite",
+      "has_life_essence",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:deity_blade"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:gold_block"
+    },
+    "E": {
+      "item": "teufel:life_essence"
+    },
+    "M": {
+      "item": "minecraft:emerald"
+    },
+    "T": {
+      "item": "teufel:totem"
+    }
+  },
+  "pattern": [
+    " E ",
+    "MTM",
+    " B "
+  ],
+  "result": {
+    "item": "minecraft:totem_of_undying"
+  },
+  "show_notification": true
+}

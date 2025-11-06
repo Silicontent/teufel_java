@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_reinforced_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:reinforced_stick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_teufel_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:teufel_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:teufel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_teufel_ingot",
+      "has_reinforced_stick",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:teufel"
+    ]
+  },
+  "sends_telemetry_event": false
+}

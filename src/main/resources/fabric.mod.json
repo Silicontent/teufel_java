@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "teufel",
+	"version": "${version}",
+	"name": "Teufel Fünf: Guess Who's Back?",
+	"description": "(back again)\nPort of the \"pain pack\" Bedrock add-on to Java Edition.",
+	"authors": [
+		"Silicontent"
+	],
+	"contact": {
+		"homepage": "https://sites.google.com/view/silicontent",
+		"sources": "https://github.com/Silicontent/teufel_collection"
+	},
+	"license": "MIT",
+	"icon": "assets/teufel/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.silicontent.teufel.Teufel"
+		],
+		"client": [
+			"com.silicontent.teufel.TeufelClient"
+		],
+		"fabric-datagen": [
+			"com.silicontent.teufel.TeufelDataGenerator"
+		]
+	},
+	"mixins": [
+		"teufel.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-biome-api-v1": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

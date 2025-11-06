@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "III",
+    "ISI",
+    "III"
+  ],
+  "result": {
+    "item": "teufel:reinforced_stick"
+  },
+  "show_notification": true
+}
