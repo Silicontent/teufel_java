@@ -3,6 +3,8 @@ package com.silicontent.teufel.item;
 import com.silicontent.teufel.Teufel;
 import com.silicontent.teufel.item.totems.*;
 import com.silicontent.teufel.item.weapons.CopperDaggerItem;
+import com.silicontent.teufel.item.weapons.DirtBallItem;
+import com.silicontent.teufel.item.weapons.FlintDaggerItem;
 import com.silicontent.teufel.item.weapons.MeteorShardItem;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
@@ -36,19 +38,19 @@ public class ModItems {
 
     // weapons
     public static final Item DIRT_BALL = registerItem("dirt_ball",
-            new SwordItem(ModToolMaterial.DIRT, 1, -0.5f, new Item.Settings().maxDamage(50)));
+            new DirtBallItem(ModToolMaterial.DIRT, 1, -0.5f, new Item.Settings().maxDamage(50)));
     public static final Item FLINT_DAGGER = registerItem("flint_dagger",
-            new SwordItem(ModToolMaterial.DIRT, 2, -2.0f, new Item.Settings().maxDamage(75)));
+            new FlintDaggerItem(ModToolMaterial.DIRT, 2, -2.0f, new Item.Settings().maxDamage(75)));
     public static final Item COPPER_DAGGER = registerItem("copper_dagger",
-            new CopperDaggerItem(ModToolMaterial.COPPER, 4, -2.0f, new Item.Settings().maxDamage(346)));
+            new CopperDaggerItem(ModToolMaterial.COPPER, 3, -2.0f, new Item.Settings().maxDamage(185)));
     public static final Item METEOR_SHARD = registerItem("meteor_shard",
-            new MeteorShardItem(ModToolMaterial.METEOR, 6, -2.4f, new Item.Settings().maxDamage(891)));
+            new MeteorShardItem(ModToolMaterial.METEOR, 5, -2.4f, new Item.Settings().maxDamage(200)));
     public static final Item FROSTBITE = registerItem("frostbite",
-            new SwordItem(ModToolMaterial.FROSTBITE, 8, -2.4f, new Item.Settings().maxDamage(1433)));
+            new SwordItem(ModToolMaterial.FROSTBITE, 8, -2.4f, new Item.Settings().maxDamage(823)));
     public static final Item OBSIDIAN_SWORD = registerItem("obsidian_sword",
-            new SwordItem(ModToolMaterial.OBSIDIAN, 11, -2.4f, new Item.Settings().maxDamage(3012)));
+            new SwordItem(ModToolMaterial.OBSIDIAN, 11, -2.6f, new Item.Settings().maxDamage(1802)));
     public static final Item PIGLIN_WARAXE = registerItem("piglin_waraxe",
-            new AxeItem(ModToolMaterial.WARAXE, 14, -3.0f, new Item.Settings().maxDamage(2937)));
+            new AxeItem(ModToolMaterial.WARAXE, 14, -3.0f, new Item.Settings().maxDamage(2133)));
     public static final Item INFERNO = registerItem("inferno",
             new SwordItem(ModToolMaterial.HELLFIRE, 16, -2.4f, new Item.Settings().maxDamage(2955)));
     public static final Item DEITY_BLADE = registerItem("deity_blade",

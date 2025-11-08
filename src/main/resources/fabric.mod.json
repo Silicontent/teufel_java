@@ -2,14 +2,14 @@
 	"schemaVersion": 1,
 	"id": "teufel",
 	"version": "${version}",
-	"name": "Teufel Fünf: Guess Who's Back?",
-	"description": "(back again)\nPort of the \"pain pack\" Bedrock add-on to Java Edition.",
+	"name": "Teufel Sechs: The Ultimatum",
+	"description": "You are making a grave mistake.",
 	"authors": [
 		"Silicontent"
 	],
 	"contact": {
 		"homepage": "https://sites.google.com/view/silicontent",
-		"sources": "https://github.com/Silicontent/teufel_collection"
+		"sources": "https://github.com/Silicontent/teufel_java"
 	},
 	"license": "MIT",
 	"icon": "assets/teufel/icon.png",
