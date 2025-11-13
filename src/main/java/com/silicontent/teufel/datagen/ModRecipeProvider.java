@@ -6,7 +6,6 @@ import com.silicontent.teufel.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
-import net.minecraft.data.server.recipe.RecipeProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
@@ -58,6 +57,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
+        // gravel to flint recipe
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Items.FLINT, 1)
+                .pattern("PP")
+                .pattern("PP")
+                .input('P', Items.GRAVEL)
+                .criterion(hasItem(Items.GRAVEL), conditionsFromItem(Items.GRAVEL))
+                .offerTo(exporter, "flint_from_gravel");
+
         // modded ingot blocks
         offerCompactBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, ModBlocks.HELLFIRE_BLOCK, ModItems.HELLFIRE_INGOT);
         offerCompactBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, ModBlocks.TERMINITE_BLOCK, ModItems.TERMINITE_INGOT);

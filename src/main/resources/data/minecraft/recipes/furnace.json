@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "#": {
+            "tag": "teufel:inner_furnace_stones"
+        },
+        "D": {
+            "tag": "teufel:corner_furnace_stones"
+        }
+    },
+    "pattern": [
+        "D#D",
+        "# #",
+        "D#D"
+    ],
+    "result": {
+        "item": "minecraft:furnace"
+    },
+    "show_notification": true
+}

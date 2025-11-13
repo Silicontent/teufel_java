@@ -21,9 +21,21 @@ public abstract class PlayerMixin extends Entity {
 
     @Inject(at = @At("HEAD"), method = "tick")
     public void tick(CallbackInfo ci) {
+        /*
+        TODO
+            Find a better way to do this so that potion effects and armor can
+            negate or otherwise lessen these
+        */
+
+        // instantly begin drowning upon going underwater
         if (this.isSubmergedInWater()) {
             this.setAir(-20);
             this.damage(this.getDamageSources().drown(), 2.0f);
+        }
+
+        // instantly kill the player upon touching lava
+        if (this.isInLava()) {
+            this.kill();
         }
     }
 }
