@@ -21,17 +21,6 @@ public class FlintDaggerItem extends SwordItem {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
 
-//    private void decrementFireUsage(ItemStack itemStack, PlayerEntity player, ItemUsageContext context) {
-//        if (this.fireUses <= 0) {
-//            // break the dagger instantly after using its flint and steel ability three times
-//            itemStack.damage(99999, player, p -> p.sendToolBreakStatus(context.getHand()));
-//        }
-//        else {
-//            // otherwise, just do regular damage to the dagger
-//            itemStack.damage(1, player, p -> p.sendToolBreakStatus(context.getHand()));
-//        }
-//    }
-
     // taken directly from FlintAndSteelItem, allows dagger to light items on fire
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
@@ -41,7 +30,7 @@ public class FlintDaggerItem extends SwordItem {
         BlockPos blockPos = context.getBlockPos();
         BlockState blockState = world.getBlockState(blockPos);
 
-        // light special blocks with "lit" states
+        // light blocks that have special "lit" states
         if (!CampfireBlock.canBeLit(blockState) && !CandleBlock.canBeLit(blockState) && !CandleCakeBlock.canBeLit(blockState)) {
             BlockPos blockPos2 = blockPos.offset(context.getSide());
             if (AbstractFireBlock.canPlaceAt(world, blockPos2, context.getHorizontalPlayerFacing())) {
