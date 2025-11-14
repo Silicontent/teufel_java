@@ -1,13 +1,19 @@
 package com.silicontent.teufel.item;
 
 import com.silicontent.teufel.Teufel;
-import com.silicontent.teufel.item.totems.*;
+import com.silicontent.teufel.item.totems.DeathTotemItem;
+import com.silicontent.teufel.item.totems.MoveTotemItem;
+import com.silicontent.teufel.item.totems.PotionTotemItem;
+import com.silicontent.teufel.item.totems.SafetyTotemItem;
 import com.silicontent.teufel.item.weapons.CopperDaggerItem;
 import com.silicontent.teufel.item.weapons.DirtBallItem;
 import com.silicontent.teufel.item.weapons.FlintDaggerItem;
 import com.silicontent.teufel.item.weapons.MeteorShardItem;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.*;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.HoeItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.SwordItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -69,14 +75,22 @@ public class ModItems {
             new HoeItem(ModToolMaterial.ENDGAME, 69419, -2.0f, new Item.Settings()));
 
     // totems
-    public static final Item TOTEM = registerItem("totem", new Item(new Item.Settings().maxCount(16)));
-    public static final Item SPEED_TOTEM = registerItem("speed_totem", new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 200, StatusEffects.SPEED, 0));
-    public static final Item STRENGTH_TOTEM = registerItem("strength_totem", new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 200, StatusEffects.STRENGTH, 0));
-    public static final Item JUMP_TOTEM = registerItem("jump_totem", new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 200, StatusEffects.JUMP_BOOST, 0));
-    public static final Item SAFETY_TOTEM = registerItem("safety_totem", new SafetyTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
-    public static final Item MOVE_TOTEM = registerItem("move_totem", new MoveTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
-    public static final Item WATER_TOTEM = registerItem("water_totem", new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 1200, StatusEffects.WATER_BREATHING, 0));
-    public static final Item DEATH_TOTEM = registerItem("death_totem", new DeathTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 20));
+    public static final Item TOTEM = registerItem("totem",
+            new Item(new Item.Settings().maxCount(16)));
+    public static final Item SPEED_TOTEM = registerItem("speed_totem",
+            new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 200, StatusEffects.SPEED, 0));
+    public static final Item STRENGTH_TOTEM = registerItem("strength_totem",
+            new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 200, StatusEffects.STRENGTH, 0));
+    public static final Item JUMP_TOTEM = registerItem("jump_totem",
+            new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 200, StatusEffects.JUMP_BOOST, 0));
+    public static final Item SAFETY_TOTEM = registerItem("safety_totem",
+            new SafetyTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
+    public static final Item MOVE_TOTEM = registerItem("move_totem",
+            new MoveTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
+    public static final Item WATER_TOTEM = registerItem("water_totem",
+            new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 1200, StatusEffects.WATER_BREATHING, 0));
+    public static final Item DEATH_TOTEM = registerItem("death_totem",
+            new DeathTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 20));
 
     private static Item registerItem(String name, Item item) {
         // register a given mod item into the item registry

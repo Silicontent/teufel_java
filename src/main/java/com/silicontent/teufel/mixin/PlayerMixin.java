@@ -2,40 +2,35 @@ package com.silicontent.teufel.mixin;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
-@Mixin(PlayerEntity.class)
+@Mixin(LivingEntity.class)
 public abstract class PlayerMixin extends Entity {
-    @Shadow public abstract boolean damage(DamageSource source, float amount);
-
     public PlayerMixin(EntityType<?> type, World world) {
         super(type, world);
     }
 
-    @Inject(at = @At("HEAD"), method = "tick")
-    public void tick(CallbackInfo ci) {
-        /*
-        TODO
-            Find a better way to do this so that potion effects and armor can
-            negate or otherwise lessen these
-        */
-
-        // instantly begin drowning upon going underwater
-        if (this.isSubmergedInWater()) {
-            this.setAir(-20);
-            this.damage(this.getDamageSources().drown(), 2.0f);
+    // modified player drowning mechanics ============================================
+    @ModifyConstant(method = "baseTick", constant = @Constant(intValue = -20))
+    public int modifyDrowningLimit(int val) {
+        // decrease the time between damage ticks while drowning
+        if ((Object) this instanceof PlayerEntity) {
+            return -1;
         }
+        return val;
+    }
 
-        // instantly kill the player upon touching lava
-        if (this.isInLava()) {
-            this.kill();
+    @Override
+    public int getMaxAir() {
+        // decrease the time before the player begins drowning underwater
+        if ((Object) this instanceof PlayerEntity) {
+            return 0;
         }
+        return super.getMaxAir();
     }
 }
