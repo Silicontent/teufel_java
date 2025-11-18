@@ -71,6 +71,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		offerCompactBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, ModBlocks.SCULKEN_BLOCK, ModItems.SCULKEN_INGOT);
 		offerCompactBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, ModBlocks.TEUFEL_BLOCK, ModItems.TEUFEL_INGOT);
 
+		// obsidian fragment recipes
+		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Items.OBSIDIAN, 1)
+				.pattern("OOO")
+				.pattern("OOO")
+				.pattern("OOO")
+				.input('O', ModItems.OBSIDIAN_FRAGMENT)
+				.criterion(hasItem(ModItems.OBSIDIAN_FRAGMENT), conditionsFromItem(ModItems.OBSIDIAN_FRAGMENT))
+				.offerTo(exporter, "obsidian_from_fragments");
+
+		ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.OBSIDIAN_FRAGMENT, 9)
+				.input(Items.OBSIDIAN)
+				.criterion(hasItem(Items.OBSIDIAN), conditionsFromItem(Items.OBSIDIAN))
+				.offerTo(exporter, getRecipeName(ModItems.OBSIDIAN_FRAGMENT));
+
 		// living wood recipes
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIVING_WOOD, 3)
 				.pattern("LL")
