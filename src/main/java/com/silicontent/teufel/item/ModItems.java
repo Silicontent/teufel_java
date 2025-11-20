@@ -5,10 +5,7 @@ import com.silicontent.teufel.item.totems.DeathTotemItem;
 import com.silicontent.teufel.item.totems.MoveTotemItem;
 import com.silicontent.teufel.item.totems.PotionTotemItem;
 import com.silicontent.teufel.item.totems.SafetyTotemItem;
-import com.silicontent.teufel.item.weapons.CopperDaggerItem;
-import com.silicontent.teufel.item.weapons.DirtBallItem;
-import com.silicontent.teufel.item.weapons.FlintDaggerItem;
-import com.silicontent.teufel.item.weapons.MeteorShardItem;
+import com.silicontent.teufel.item.weapons.*;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
@@ -52,7 +49,7 @@ public class ModItems {
 	public static final Item METEOR_SHARD = registerItem("meteor_shard",
 			new MeteorShardItem(ModToolMaterial.METEOR, 5, -2.4f, new Item.Settings().maxDamage(200)));
 	public static final Item FROSTBITE = registerItem("frostbite",
-			new SwordItem(ModToolMaterial.FROSTBITE, 8, -2.4f, new Item.Settings().maxDamage(823)));
+			new FrostbiteItem(ModToolMaterial.FROSTBITE, 8, -2.4f, new Item.Settings().maxDamage(823)));
 	public static final Item OBSIDIAN_SWORD = registerItem("obsidian_sword",
 			new SwordItem(ModToolMaterial.OBSIDIAN, 11, -2.6f, new Item.Settings().maxDamage(1802)));
 	public static final Item PIGLIN_WARAXE = registerItem("piglin_waraxe",
