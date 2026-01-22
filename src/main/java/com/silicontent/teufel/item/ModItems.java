@@ -1,12 +1,7 @@
 package com.silicontent.teufel.item;
 
 import com.silicontent.teufel.Teufel;
-import com.silicontent.teufel.item.totems.DeathTotemItem;
-import com.silicontent.teufel.item.totems.MoveTotemItem;
-import com.silicontent.teufel.item.totems.PotionTotemItem;
-import com.silicontent.teufel.item.totems.SafetyTotemItem;
 import com.silicontent.teufel.item.weapons.*;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
@@ -27,7 +22,7 @@ public class ModItems {
 	public static final Item LIFE_ESSENCE = registerItem("life_essence", new Item(new Item.Settings()));
 	public static final Item DEATH_ESSENCE = registerItem("death_essence", new Item(new Item.Settings()));
 	public static final Item FIRE_ESSENCE = registerItem("fire_essence", new Item(new Item.Settings()));
-	public static final Item FROST_ESSENCE = registerItem("frost_essence", new Item(new Item.Settings()));
+	public static final Item WATER_ESSENCE = registerItem("water_essence", new Item(new Item.Settings()));
 	public static final Item PEACE_ESSENCE = registerItem("peace_essence", new Item(new Item.Settings()));
 	public static final Item PAIN_ESSENCE = registerItem("pain_essence", new Item(new Item.Settings()));
 
@@ -70,24 +65,6 @@ public class ModItems {
 			new HoeItem(ModToolMaterial.ENDGAME, 69419, -2.0f, new Item.Settings()));
 	public static final Item COPPER_INJECTION = registerItem("copper_injection",
 			new HoeItem(ModToolMaterial.ENDGAME, 69419, -2.0f, new Item.Settings()));
-
-	// totems
-	public static final Item TOTEM = registerItem("totem",
-			new Item(new Item.Settings().maxCount(16)));
-	public static final Item SPEED_TOTEM = registerItem("speed_totem",
-			new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 200, StatusEffects.SPEED, 0));
-	public static final Item STRENGTH_TOTEM = registerItem("strength_totem",
-			new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 200, StatusEffects.STRENGTH, 0));
-	public static final Item JUMP_TOTEM = registerItem("jump_totem",
-			new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 200, StatusEffects.JUMP_BOOST, 0));
-	public static final Item SAFETY_TOTEM = registerItem("safety_totem",
-			new SafetyTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
-	public static final Item MOVE_TOTEM = registerItem("move_totem",
-			new MoveTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
-	public static final Item WATER_TOTEM = registerItem("water_totem",
-			new PotionTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 1200, StatusEffects.WATER_BREATHING, 0));
-	public static final Item DEATH_TOTEM = registerItem("death_totem",
-			new DeathTotemItem(new Item.Settings().rarity(Rarity.UNCOMMON), 20));
 
 	private static Item registerItem(String name, Item item) {
 		// register a given mod item into the item registry

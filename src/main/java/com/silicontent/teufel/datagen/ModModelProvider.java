@@ -48,7 +48,7 @@ public class ModModelProvider extends FabricModelProvider {
 		itemModelGenerator.register(ModItems.LIFE_ESSENCE, Models.GENERATED);
 		itemModelGenerator.register(ModItems.DEATH_ESSENCE, Models.GENERATED);
 		itemModelGenerator.register(ModItems.FIRE_ESSENCE, Models.GENERATED);
-		itemModelGenerator.register(ModItems.FROST_ESSENCE, Models.GENERATED);
+		itemModelGenerator.register(ModItems.WATER_ESSENCE, Models.GENERATED);
 		itemModelGenerator.register(ModItems.PEACE_ESSENCE, Models.GENERATED);
 		itemModelGenerator.register(ModItems.PAIN_ESSENCE, Models.GENERATED);
 
@@ -60,15 +60,6 @@ public class ModModelProvider extends FabricModelProvider {
 		itemModelGenerator.register(ModItems.TEUFEL_INGOT, Models.GENERATED);
 
 		itemModelGenerator.register(ModItems.DIRT_BALL, Models.GENERATED);
-
-		itemModelGenerator.register(ModItems.TOTEM, Models.GENERATED);
-		itemModelGenerator.register(ModItems.SPEED_TOTEM, Models.GENERATED);
-		itemModelGenerator.register(ModItems.STRENGTH_TOTEM, Models.GENERATED);
-		itemModelGenerator.register(ModItems.JUMP_TOTEM, Models.GENERATED);
-		itemModelGenerator.register(ModItems.SAFETY_TOTEM, Models.GENERATED);
-		itemModelGenerator.register(ModItems.MOVE_TOTEM, Models.GENERATED);
-		itemModelGenerator.register(ModItems.WATER_TOTEM, Models.GENERATED);
-		itemModelGenerator.register(ModItems.DEATH_TOTEM, Models.GENERATED);
 
 		// handheld items
 		itemModelGenerator.register(ModItems.REINFORCED_STICK, Models.HANDHELD);

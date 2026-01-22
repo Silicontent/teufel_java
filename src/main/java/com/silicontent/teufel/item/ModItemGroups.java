@@ -5,7 +5,6 @@ import com.silicontent.teufel.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -48,7 +47,7 @@ public class ModItemGroups {
 						entries.add(ModItems.LIFE_ESSENCE);
 						entries.add(ModItems.DEATH_ESSENCE);
 						entries.add(ModItems.FIRE_ESSENCE);
-						entries.add(ModItems.FROST_ESSENCE);
+						entries.add(ModItems.WATER_ESSENCE);
 						entries.add(ModItems.PEACE_ESSENCE);
 						entries.add(ModItems.PAIN_ESSENCE);
 
@@ -85,26 +84,6 @@ public class ModItemGroups {
 						entries.add(ModItems.COPPER_INJECTION);
 
 					})).build());
-
-	public static final ItemGroup TOTEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
-			new Identifier(Teufel.MOD_ID, "totems"),
-			FabricItemGroup.builder()
-					.displayName(Text.translatable("itemgroup.teufel.totems"))
-					.icon(() -> new ItemStack(ModItems.TOTEM))
-					.entries(((displayContext, entries) -> {
-
-						entries.add(ModItems.TOTEM);
-						entries.add(Items.TOTEM_OF_UNDYING);
-						entries.add(ModItems.DEATH_TOTEM);
-						entries.add(ModItems.SPEED_TOTEM);
-						entries.add(ModItems.STRENGTH_TOTEM);
-						entries.add(ModItems.JUMP_TOTEM);
-						entries.add(ModItems.SAFETY_TOTEM);
-						entries.add(ModItems.MOVE_TOTEM);
-						entries.add(ModItems.WATER_TOTEM);
-
-					})).build());
-
 
 	public static void registerItemGroups() {
 		Teufel.LOGGER.info("Registering item groups for " + Teufel.MOD_ID);

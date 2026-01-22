@@ -28,7 +28,7 @@
 	"item.teufel.life_essence": "Essence of Life",
 	"item.teufel.death_essence": "Essence of Death",
 	"item.teufel.fire_essence": "Essence of Fire",
-	"item.teufel.frost_essence": "Essence of Frost",
+	"item.teufel.water_essence": "Essence of Water",
 	"item.teufel.peace_essence": "Essence of Peace",
 	"item.teufel.pain_essence": "Essence of Pain",
 
@@ -54,15 +54,6 @@
 	"item.teufel.teufel": "Teufel",
 	"item.teufel.ultimate_hoe": "Ultimate Hoe",
 	"item.teufel.copper_injection": "Copper Injection",
-
-	"item.teufel.totem": "Totem",
-	"item.teufel.speed_totem": "Totem of Escape",
-	"item.teufel.strength_totem": "Totem of Power",
-	"item.teufel.jump_totem": "Totem of Heights",
-	"item.teufel.safety_totem": "Totem of the Last Resort",
-	"item.teufel.move_totem": "Totem of Movement",
-	"item.teufel.water_totem": "Totem of the Seas",
-	"item.teufel.death_totem": "Totem of Dying",
 
 	"itemgroup.teufel.blocks_materials": "Teufel Blocks & Items",
 	"itemgroup.teufel.weapons": "Teufel Weapons",

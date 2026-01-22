@@ -1,6 +1,5 @@
 package com.silicontent.teufel.datagen;
 
-import com.silicontent.teufel.Teufel;
 import com.silicontent.teufel.block.ModBlocks;
 import com.silicontent.teufel.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -13,7 +12,6 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.util.Identifier;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -85,7 +83,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.criterion(hasItem(Items.OBSIDIAN), conditionsFromItem(Items.OBSIDIAN))
 				.offerTo(exporter, getRecipeName(ModItems.OBSIDIAN_FRAGMENT));
 
-		// living wood recipes
+		// LIVING WOOD FAMILY =====================================================================
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIVING_WOOD, 3)
 				.pattern("LL")
 				.pattern("LL")
@@ -100,7 +98,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.criterion(hasItem(ModBlocks.STRIPPED_LIVING_LOG), conditionsFromItem(ModBlocks.STRIPPED_LIVING_LOG))
 				.offerTo(exporter, getRecipeName(ModBlocks.STRIPPED_LIVING_WOOD));
 
-		// living planks recipes
 		offerWoodPlanksRecipe(exporter, ModBlocks.LIVING_PLANKS, ModBlocks.LIVING_LOG, "living_planks_from_living_log");
 		offerWoodPlanksRecipe(exporter, ModBlocks.LIVING_PLANKS, ModBlocks.LIVING_WOOD, "living_planks_from_living_wood");
 		offerWoodPlanksRecipe(exporter, ModBlocks.LIVING_PLANKS, ModBlocks.STRIPPED_LIVING_LOG, "living_planks_from_stripped_living_log");
@@ -132,22 +129,23 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.criterion(hasItem(ModBlocks.LIVING_PLANKS), conditionsFromItem(ModBlocks.LIVING_PLANKS))
 				.offerTo(exporter, getRecipeName(ModBlocks.LIVING_TRAPDOOR));
 
+		// OTHER RECIPES ==========================================================================
 		// hellfire ingots via smelting
 		offerSmelting(exporter, List.of(ModItems.HELLFIRE_CHUNK), RecipeCategory.MISC, ModItems.HELLFIRE_INGOT, 0.7f, 200, "hellfire_ingot");
 		offerBlasting(exporter, List.of(ModItems.HELLFIRE_CHUNK), RecipeCategory.MISC, ModItems.HELLFIRE_INGOT, 0.7f, 100, "hellfire_ingot");
 
 		// reinforced stick
 		ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.REINFORCED_STICK, 1)
-				.pattern("III")
+				.pattern(" I ")
 				.pattern("ISI")
-				.pattern("III")
+				.pattern(" I ")
 				.input('I', Items.IRON_NUGGET)
 				.input('S', Items.STICK)
 				.criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
 				.criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
 				.offerTo(exporter, getRecipeName(ModItems.REINFORCED_STICK));
 
-		// ultim eye recipe
+		// ultim eye
 		ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ULTIM_EYE, 1)
 				.input(Items.ENDER_EYE)
 				.input(Items.DIAMOND)
@@ -157,7 +155,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.criterion(hasItem(Items.CHORUS_FRUIT), conditionsFromItem(Items.CHORUS_FRUIT))
 				.offerTo(exporter, getRecipeName(ModItems.ULTIM_EYE));
 
-		// weapons
+		// WEAPONS ================================================================================
 		ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIRT_BALL, 1)
 				.input(ItemTags.DIRT)
 				.criterion(hasItem(Items.DIRT), conditionsFromItem(Items.DIRT))
@@ -196,10 +194,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.pattern("I")
 				.pattern("S")
 				.input('I', Items.ICE)
-				.input('E', ModItems.FROST_ESSENCE)
+				.input('E', ModItems.WATER_ESSENCE)
 				.input('S', ModItems.REINFORCED_STICK)
 				.criterion(hasItem(Items.ICE), conditionsFromItem(Items.ICE))
-				.criterion(hasItem(ModItems.FROST_ESSENCE), conditionsFromItem(ModItems.FROST_ESSENCE))
+				.criterion(hasItem(ModItems.WATER_ESSENCE), conditionsFromItem(ModItems.WATER_ESSENCE))
 				.criterion(hasItem(ModItems.REINFORCED_STICK), conditionsFromItem(ModItems.REINFORCED_STICK))
 				.offerTo(exporter, getRecipeName(ModItems.FROSTBITE));
 
@@ -299,127 +297,5 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.criterion(hasItem(Items.COPPER_BLOCK), conditionsFromItem(Items.COPPER_BLOCK))
 				.criterion(hasItem(Items.GLASS), conditionsFromItem(Items.GLASS))
 				.offerTo(exporter, getRecipeName(ModItems.COPPER_INJECTION));
-
-		// totems
-		ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.TOTEM, 1)
-				.pattern(" B ")
-				.pattern("ETE")
-				.pattern(" B ")
-				.input('B', Items.COBBLESTONE)
-				.input('E', Items.LAPIS_LAZULI)
-				.input('T', Items.EXPERIENCE_BOTTLE)
-				.criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
-				.criterion(hasItem(Items.LAPIS_LAZULI), conditionsFromItem(Items.LAPIS_LAZULI))
-				.criterion(hasItem(Items.EXPERIENCE_BOTTLE), conditionsFromItem(Items.EXPERIENCE_BOTTLE))
-				.offerTo(exporter, getRecipeName(ModItems.TOTEM));
-
-		ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.TOTEM_OF_UNDYING, 1)
-				.pattern(" E ")
-				.pattern("MTM")
-				.pattern(" B ")
-				.input('E', ModItems.LIFE_ESSENCE)
-				.input('M', Items.EMERALD)
-				.input('T', ModItems.TOTEM)
-				.input('B', Items.GOLD_BLOCK)
-				.criterion(hasItem(ModItems.LIFE_ESSENCE), conditionsFromItem(ModItems.LIFE_ESSENCE))
-				.criterion(hasItem(Items.EMERALD), conditionsFromItem(Items.EMERALD))
-				.criterion(hasItem(ModItems.TOTEM), conditionsFromItem(ModItems.TOTEM))
-				.criterion(hasItem(Items.GOLD_BLOCK), conditionsFromItem(Items.GOLD_BLOCK))
-				.offerTo(exporter, new Identifier(Teufel.MOD_ID + ":totem_of_undying_recipe"));
-
-		ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.SPEED_TOTEM, 1)
-				.pattern(" E ")
-				.pattern("MTM")
-				.pattern(" B ")
-				.input('E', ModItems.PEACE_ESSENCE)
-				.input('M', Items.EMERALD)
-				.input('T', ModItems.TOTEM)
-				.input('B', Items.DIAMOND_BLOCK)
-				.criterion(hasItem(ModItems.PEACE_ESSENCE), conditionsFromItem(ModItems.PEACE_ESSENCE))
-				.criterion(hasItem(Items.EMERALD), conditionsFromItem(Items.EMERALD))
-				.criterion(hasItem(ModItems.TOTEM), conditionsFromItem(ModItems.TOTEM))
-				.criterion(hasItem(Items.DIAMOND_BLOCK), conditionsFromItem(Items.DIAMOND_BLOCK))
-				.offerTo(exporter, getRecipeName(ModItems.SPEED_TOTEM));
-
-		ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.STRENGTH_TOTEM, 1)
-				.pattern(" E ")
-				.pattern("MTM")
-				.pattern(" B ")
-				.input('E', ModItems.DEATH_ESSENCE)
-				.input('M', Items.DIAMOND)
-				.input('T', ModItems.TOTEM)
-				.input('B', ModBlocks.HELLFIRE_BLOCK)
-				.criterion(hasItem(ModItems.DEATH_ESSENCE), conditionsFromItem(ModItems.DEATH_ESSENCE))
-				.criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
-				.criterion(hasItem(ModItems.TOTEM), conditionsFromItem(ModItems.TOTEM))
-				.criterion(hasItem(ModBlocks.HELLFIRE_BLOCK), conditionsFromItem(ModBlocks.HELLFIRE_BLOCK))
-				.offerTo(exporter, getRecipeName(ModItems.STRENGTH_TOTEM));
-
-		ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.JUMP_TOTEM, 1)
-				.pattern(" E ")
-				.pattern("MTM")
-				.pattern(" B ")
-				.input('E', ModItems.PEACE_ESSENCE)
-				.input('M', Items.IRON_INGOT)
-				.input('T', ModItems.TOTEM)
-				.input('B', Items.EMERALD_BLOCK)
-				.criterion(hasItem(ModItems.PEACE_ESSENCE), conditionsFromItem(ModItems.PEACE_ESSENCE))
-				.criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
-				.criterion(hasItem(ModItems.TOTEM), conditionsFromItem(ModItems.TOTEM))
-				.criterion(hasItem(Items.EMERALD_BLOCK), conditionsFromItem(Items.EMERALD_BLOCK))
-				.offerTo(exporter, getRecipeName(ModItems.JUMP_TOTEM));
-
-		ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.SAFETY_TOTEM, 1)
-				.pattern(" E ")
-				.pattern("MTM")
-				.pattern(" B ")
-				.input('E', ModItems.PAIN_ESSENCE)
-				.input('M', Items.CHORUS_FRUIT)
-				.input('T', ModItems.TOTEM)
-				.input('B', Items.AMETHYST_BLOCK)
-				.criterion(hasItem(ModItems.PAIN_ESSENCE), conditionsFromItem(ModItems.PAIN_ESSENCE))
-				.criterion(hasItem(Items.CHORUS_FRUIT), conditionsFromItem(Items.CHORUS_FRUIT))
-				.criterion(hasItem(ModItems.TOTEM), conditionsFromItem(ModItems.TOTEM))
-				.criterion(hasItem(Items.AMETHYST_BLOCK), conditionsFromItem(Items.AMETHYST_BLOCK))
-				.offerTo(exporter, getRecipeName(ModItems.SAFETY_TOTEM));
-
-		ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.MOVE_TOTEM, 1)
-				.input(ModItems.SPEED_TOTEM)
-				.input(ModItems.STRENGTH_TOTEM)
-				.input(ModItems.JUMP_TOTEM)
-				.input(ModItems.PEACE_ESSENCE)
-				.criterion(hasItem(ModItems.SPEED_TOTEM), conditionsFromItem(ModItems.SPEED_TOTEM))
-				.criterion(hasItem(ModItems.STRENGTH_TOTEM), conditionsFromItem(ModItems.STRENGTH_TOTEM))
-				.criterion(hasItem(ModItems.JUMP_TOTEM), conditionsFromItem(ModItems.JUMP_TOTEM))
-				.criterion(hasItem(ModItems.PEACE_ESSENCE), conditionsFromItem(ModItems.PEACE_ESSENCE))
-				.offerTo(exporter, getRecipeName(ModItems.MOVE_TOTEM));
-
-		ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.WATER_TOTEM, 1)
-				.pattern(" E ")
-				.pattern("MTM")
-				.pattern(" B ")
-				.input('E', ModItems.FROST_ESSENCE)
-				.input('M', Items.GOLD_INGOT)
-				.input('T', ModItems.TOTEM)
-				.input('B', Items.LAPIS_BLOCK)
-				.criterion(hasItem(ModItems.FROST_ESSENCE), conditionsFromItem(ModItems.FROST_ESSENCE))
-				.criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-				.criterion(hasItem(ModItems.TOTEM), conditionsFromItem(ModItems.TOTEM))
-				.criterion(hasItem(Items.LAPIS_BLOCK), conditionsFromItem(Items.LAPIS_BLOCK))
-				.offerTo(exporter, getRecipeName(ModItems.WATER_TOTEM));
-
-		ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DEATH_TOTEM, 1)
-				.pattern(" E ")
-				.pattern("MTM")
-				.pattern(" B ")
-				.input('E', ModItems.DEATH_ESSENCE)
-				.input('M', Items.DIAMOND)
-				.input('T', ModItems.TOTEM)
-				.input('B', Items.REDSTONE_BLOCK)
-				.criterion(hasItem(ModItems.DEATH_ESSENCE), conditionsFromItem(ModItems.DEATH_ESSENCE))
-				.criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
-				.criterion(hasItem(ModItems.TOTEM), conditionsFromItem(ModItems.TOTEM))
-				.criterion(hasItem(Items.REDSTONE_BLOCK), conditionsFromItem(Items.REDSTONE_BLOCK))
-				.offerTo(exporter, getRecipeName(ModItems.DEATH_TOTEM));
 	}
 }
