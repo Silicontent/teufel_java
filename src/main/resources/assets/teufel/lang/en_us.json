@@ -59,5 +59,9 @@
 	"itemgroup.teufel.weapons": "Teufel Weapons",
 	"itemgroup.teufel.totems": "Teufel Totems",
 
-	"entity.teufel.cow": "Cow"
+	"entity.teufel.cow": "Cow",
+
+
+	"tooltip.teufel.dirt_ball": "§7§o\"Well... better than nothing.\"",
+	"tooltip.teufel.flint_dagger": "§7§o\"Why does this seem familiar...?\""
 }

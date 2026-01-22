@@ -1,18 +1,6 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_frost_essence": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "teufel:frost_essence"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_ice": {
       "conditions": {
         "items": [
@@ -42,12 +30,24 @@
         "recipe": "minecraft:frostbite"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_water_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "teufel:water_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_ice",
-      "has_frost_essence",
+      "has_water_essence",
       "has_reinforced_stick",
       "has_the_recipe"
     ]

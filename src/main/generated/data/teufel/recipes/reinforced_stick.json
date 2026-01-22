@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    "III",
+    " I ",
     "ISI",
-    "III"
+    " I "
   ],
   "result": {
     "item": "teufel:reinforced_stick"

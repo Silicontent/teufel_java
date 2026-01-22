@@ -2,6 +2,7 @@ package com.silicontent.teufel.item.weapons;
 
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.*;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
@@ -11,14 +12,23 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class FlintDaggerItem extends SwordItem {
 	public FlintDaggerItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
 		super(toolMaterial, attackDamage, attackSpeed, settings);
+	}
+
+	@Override
+	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+		tooltip.add(Text.translatable("tooltip.teufel.flint_dagger"));
 	}
 
 	// taken directly from FlintAndSteelItem, allows dagger to light items on fire
