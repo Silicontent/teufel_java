@@ -41,13 +41,12 @@ public class FlintDaggerItem extends SwordItem {
 				ItemStack itemStack = context.getStack();
 				// run server code and damage item
 				if (playerEntity instanceof ServerPlayerEntity) {
-					Criteria.PLACED_BLOCK.trigger((ServerPlayerEntity)playerEntity, blockPos2, itemStack);
+					Criteria.PLACED_BLOCK.trigger((ServerPlayerEntity) playerEntity, blockPos2, itemStack);
 					itemStack.damage(15, playerEntity, p -> p.sendToolBreakStatus(context.getHand()));
 				}
 
 				return ActionResult.success(world.isClient());
-			}
-			else {
+			} else {
 				return ActionResult.FAIL;
 			}
 		}

@@ -5,7 +5,6 @@ import com.silicontent.teufel.entity.ModEntities;
 import com.silicontent.teufel.item.ModItemGroups;
 import com.silicontent.teufel.item.ModItems;
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import org.slf4j.Logger;
@@ -16,7 +15,7 @@ public class Teufel implements ModInitializer {
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final String MOD_ID = "teufel";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
