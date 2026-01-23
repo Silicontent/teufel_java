@@ -67,7 +67,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		offerCompactBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, ModBlocks.HELLFIRE_BLOCK, ModItems.HELLFIRE_INGOT);
 		offerCompactBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, ModBlocks.TERMINITE_BLOCK, ModItems.TERMINITE_INGOT);
 		offerCompactBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, ModBlocks.SCULKEN_BLOCK, ModItems.SCULKEN_INGOT);
-		offerCompactBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, ModBlocks.TEUFEL_BLOCK, ModItems.TEUFEL_INGOT);
+		offerCompactBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, ModBlocks.DEMONITE_BLOCK, ModItems.DEMONITE_INGOT);
 
 		// obsidian fragment recipes
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Items.OBSIDIAN, 1)
@@ -266,9 +266,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.pattern("T")
 				.pattern("T")
 				.pattern("S")
-				.input('T', ModItems.TEUFEL_INGOT)
+				.input('T', ModItems.DEMONITE_INGOT)
 				.input('S', ModItems.REINFORCED_STICK)
-				.criterion(hasItem(ModItems.TEUFEL_INGOT), conditionsFromItem(ModItems.TEUFEL_INGOT))
+				.criterion(hasItem(ModItems.DEMONITE_INGOT), conditionsFromItem(ModItems.DEMONITE_INGOT))
 				.criterion(hasItem(ModItems.REINFORCED_STICK), conditionsFromItem(ModItems.REINFORCED_STICK))
 				.offerTo(exporter, getRecipeName(ModItems.TEUFEL));
 

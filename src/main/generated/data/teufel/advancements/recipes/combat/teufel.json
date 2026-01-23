@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_reinforced_stick": {
+    "has_demonite_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "teufel:reinforced_stick"
+              "teufel:demonite_ingot"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_teufel_ingot": {
+    "has_reinforced_stick": {
       "conditions": {
         "items": [
           {
             "items": [
-              "teufel:teufel_ingot"
+              "teufel:reinforced_stick"
             ]
           }
         ]
@@ -34,7 +34,7 @@
   },
   "requirements": [
     [
-      "has_teufel_ingot",
+      "has_demonite_ingot",
       "has_reinforced_stick",
       "has_the_recipe"
     ]

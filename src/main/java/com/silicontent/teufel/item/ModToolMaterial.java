@@ -14,7 +14,7 @@ public enum ModToolMaterial implements ToolMaterial {
 			() -> Ingredient.ofItems(Items.COPPER_INGOT)),
 	METEOR(2, 891, 1.0f, 0.0f, 5,
 			() -> Ingredient.ofItems(ModItems.METEOR_INGOT)),
-	FROSTBITE(2, 1433, 1.0f, 0.0f, 12,
+	FROZEN(2, 1433, 1.0f, 0.0f, 12,
 			() -> Ingredient.ofItems(Items.ICE)),
 	OBSIDIAN(3, 3012, 1.0f, 0.0f, 15,
 			() -> Ingredient.ofItems(Items.OBSIDIAN, Items.CRYING_OBSIDIAN)),
@@ -26,8 +26,8 @@ public enum ModToolMaterial implements ToolMaterial {
 			() -> Ingredient.ofItems(ModItems.TERMINITE_INGOT)),
 	SCULKEN(6, 5037, 1.0f, 0.0f, 40,
 			() -> Ingredient.ofItems(ModItems.SCULKEN_INGOT)),
-	TEUFEL(7, 6660, 1.0f, 0.0f, 50,
-			() -> Ingredient.ofItems(ModItems.TEUFEL_INGOT)),
+	DEMONITE(7, 6660, 1.0f, 0.0f, 50,
+			() -> Ingredient.ofItems(ModItems.DEMONITE_INGOT)),
 	ENDGAME(7, 99999, 1.0f, 0.0f, 50,
 			() -> Ingredient.ofItems(Items.NETHER_STAR));
 

@@ -1,15 +1,26 @@
 package com.silicontent.teufel.item.weapons;
 
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.text.Text;
+import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class FrostbiteItem extends SwordItem {
 	public FrostbiteItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
 		super(toolMaterial, attackDamage, attackSpeed, settings);
+	}
+
+	@Override
+	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+		tooltip.add(Text.translatable("tooltip.teufel.frostbite"));
 	}
 
 	@Override
@@ -18,7 +29,7 @@ public class FrostbiteItem extends SwordItem {
 			// inflict extra freezing damage on the target
 			target.damage(target.getDamageSources().freeze(), 2.0f);
 			// give the target slowness
-			target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 0), attacker);
+			target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 1), attacker);
 		}
 
 		return super.postHit(stack, target, attacker);

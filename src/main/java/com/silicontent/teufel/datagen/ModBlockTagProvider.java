@@ -21,7 +21,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 				.add(ModBlocks.HELLFIRE_BLOCK)
 				.add(ModBlocks.TERMINITE_BLOCK)
 				.add(ModBlocks.SCULKEN_BLOCK)
-				.add(ModBlocks.TEUFEL_BLOCK);
+				.add(ModBlocks.DEMONITE_BLOCK);
 
 		// tool tiers
 		getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
@@ -31,7 +31,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
 		getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
 				.add(ModBlocks.SCULKEN_BLOCK)
-				.add(ModBlocks.TEUFEL_BLOCK);
+				.add(ModBlocks.DEMONITE_BLOCK);
 
 		// living planks and variants
 		getOrCreateTagBuilder(BlockTags.PLANKS)

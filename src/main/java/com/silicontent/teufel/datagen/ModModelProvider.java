@@ -20,7 +20,7 @@ public class ModModelProvider extends FabricModelProvider {
 		blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.HELLFIRE_BLOCK);
 		blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TERMINITE_BLOCK);
 		blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SCULKEN_BLOCK);
-		blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TEUFEL_BLOCK);
+		blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEMONITE_BLOCK);
 
 		// living plank blocks
 		BlockStateModelGenerator.BlockTexturePool livingPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIVING_PLANKS);
@@ -57,7 +57,7 @@ public class ModModelProvider extends FabricModelProvider {
 		itemModelGenerator.register(ModItems.HELLFIRE_INGOT, Models.GENERATED);
 		itemModelGenerator.register(ModItems.TERMINITE_INGOT, Models.GENERATED);
 		itemModelGenerator.register(ModItems.SCULKEN_INGOT, Models.GENERATED);
-		itemModelGenerator.register(ModItems.TEUFEL_INGOT, Models.GENERATED);
+		itemModelGenerator.register(ModItems.DEMONITE_INGOT, Models.GENERATED);
 
 		itemModelGenerator.register(ModItems.DIRT_BALL, Models.GENERATED);
 

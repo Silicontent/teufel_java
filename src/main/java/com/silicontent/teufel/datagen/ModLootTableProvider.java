@@ -36,7 +36,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 		addDrop(ModBlocks.HELLFIRE_BLOCK);
 		addDrop(ModBlocks.TERMINITE_BLOCK);
 		addDrop(ModBlocks.SCULKEN_BLOCK);
-		addDrop(ModBlocks.TEUFEL_BLOCK);
+		addDrop(ModBlocks.DEMONITE_BLOCK);
 
 		addDrop(ModBlocks.LIVING_LOG);
 		addDrop(ModBlocks.LIVING_WOOD);

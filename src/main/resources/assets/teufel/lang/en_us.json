@@ -3,7 +3,7 @@
 	"block.teufel.hellfire_block": "Block of Hellfire",
 	"block.teufel.terminite_block": "Block of Terminite",
 	"block.teufel.sculken_block": "Block of Sculken",
-	"block.teufel.teufel_block": "Block of Demonite",
+	"block.teufel.demonite_block": "Block of Demonite",
 
 	"block.teufel.living_log": "Living Log",
 	"block.teufel.living_wood": "Living Wood",
@@ -25,19 +25,19 @@
 	"item.teufel.obsidian_fragment": "Obsidian Fragment",
 	"item.teufel.ultim_eye": "Ultim Eye",
 
-	"item.teufel.life_essence": "Essence of Life",
-	"item.teufel.death_essence": "Essence of Death",
-	"item.teufel.fire_essence": "Essence of Fire",
-	"item.teufel.water_essence": "Essence of Water",
-	"item.teufel.peace_essence": "Essence of Peace",
-	"item.teufel.pain_essence": "Essence of Pain",
+	"item.teufel.life_essence": "§aEssence of Life",
+	"item.teufel.death_essence": "§aEssence of Death",
+	"item.teufel.fire_essence": "§aEssence of Fire",
+	"item.teufel.water_essence": "§aEssence of Water",
+	"item.teufel.peace_essence": "§aEssence of Peace",
+	"item.teufel.pain_essence": "§aEssence of Pain",
 
 	"item.teufel.hellfire_chunk": "Hellfire Chunk",
 	"item.teufel.meteor_ingot": "Meteor Ingot",
 	"item.teufel.hellfire_ingot": "Hellfire Ingot",
 	"item.teufel.terminite_ingot": "Terminite Ingot",
 	"item.teufel.sculken_ingot": "Sculken Ingot",
-	"item.teufel.teufel_ingot": "Demonite Ingot",
+	"item.teufel.demonite_ingot": "Demonite Ingot",
 
 	"item.teufel.dirt_ball": "Fistfull of Soil",
 	"item.teufel.flint_dagger": "Flint Dagger",
@@ -57,11 +57,22 @@
 
 	"itemgroup.teufel.blocks_materials": "Teufel Blocks & Items",
 	"itemgroup.teufel.weapons": "Teufel Weapons",
-	"itemgroup.teufel.totems": "Teufel Totems",
 
 	"entity.teufel.cow": "Cow",
 
 
+
+	"tooltip.teufel.ultim_eye": "§7Peers through the world to find hidden locations.",
+	"tooltip.teufel.life_essence": "§7§o\"Pulsing with vital energy.\"",
+	"tooltip.teufel.death_essence": "§7§o\"Holding this fills you with dread.\"",
+	"tooltip.teufel.fire_essence": "§7§o\"Provides protection from extreme heat.\"",
+	"tooltip.teufel.water_essence": "§7§o\"\"",
+	"tooltip.teufel.peace_essence": "§7§o\"A remnant of what once was.\"",
+	"tooltip.teufel.pain_essence": "§7§o\"The manifestation of this world's blight.\"",
+
 	"tooltip.teufel.dirt_ball": "§7§o\"Well... better than nothing.\"",
-	"tooltip.teufel.flint_dagger": "§7§o\"Why does this seem familiar...?\""
+	"tooltip.teufel.flint_dagger": "§7§o\"Why does this seem familiar...?\"",
+	"tooltip.teufel.copper_dagger": "§7§o\"I don't want to talk about it.\"",
+	"tooltip.teufel.meteor_shard": "§7§o\"Who needs hand warmers with a sword like this?\"",
+	"tooltip.teufel.frostbite": "§7§o\"Cool and refreshing for nobody but you.\""
 }

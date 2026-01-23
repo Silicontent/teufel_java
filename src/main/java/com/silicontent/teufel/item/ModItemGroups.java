@@ -37,7 +37,7 @@ public class ModItemGroups {
 						entries.add(ModBlocks.HELLFIRE_BLOCK);
 						entries.add(ModBlocks.TERMINITE_BLOCK);
 						entries.add(ModBlocks.SCULKEN_BLOCK);
-						entries.add(ModBlocks.TEUFEL_BLOCK);
+						entries.add(ModBlocks.DEMONITE_BLOCK);
 
 						entries.add(ModItems.REINFORCED_STICK);
 						entries.add(ModItems.WITHERED_BONE);
@@ -56,7 +56,7 @@ public class ModItemGroups {
 						entries.add(ModItems.HELLFIRE_INGOT);
 						entries.add(ModItems.TERMINITE_INGOT);
 						entries.add(ModItems.SCULKEN_INGOT);
-						entries.add(ModItems.TEUFEL_INGOT);
+						entries.add(ModItems.DEMONITE_INGOT);
 
 					})).build());
 

@@ -13,14 +13,14 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 public class ModBlocks {
 	// hellfire blocks
 	public static final Block HELLFIRE_ORE = registerBlock("hellfire_ore",
-			new ExperienceDroppingBlock(AbstractBlock.Settings.copy(Blocks.NETHERRACK).strength(3.0f, 3.0f), UniformIntProvider.create(2, 5)));
+			new ExperienceDroppingBlock(AbstractBlock.Settings.copy(Blocks.NETHERRACK).strength(3.0f, 3.0f).sounds(BlockSoundGroup.NETHERRACK), UniformIntProvider.create(2, 5)));
 	public static final Block HELLFIRE_BLOCK = registerBlock("hellfire_block",
 			new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
 	public static final Block TERMINITE_BLOCK = registerBlock("terminite_block",
 			new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE).strength(5.0f)));
 	public static final Block SCULKEN_BLOCK = registerBlock("sculken_block",
 			new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE).strength(5.0f)));
-	public static final Block TEUFEL_BLOCK = registerBlock("teufel_block",
+	public static final Block DEMONITE_BLOCK = registerBlock("demonite_block",
 			new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE).strength(6.6f)));
 
 	// living wood & planks
