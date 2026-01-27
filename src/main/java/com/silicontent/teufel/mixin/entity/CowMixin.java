@@ -58,7 +58,7 @@ public abstract class CowMixin extends AnimalEntity {
 			// use this to scale the effect's duration based on the local difficulty
 			int localDiff = (int) this.getWorld().getLocalDifficulty(this.getBlockPos()).getLocalDifficulty();
 			// inflict temporary nausea
-			((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200), this);
+			((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200 * localDiff), this);
 		}
 
 		return bl;
