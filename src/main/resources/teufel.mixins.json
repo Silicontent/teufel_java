@@ -4,7 +4,8 @@
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
 		"PlayerDrownMixin",
-		"PlayerLavaMixin"
+		"PlayerLavaMixin",
+		"entity.CowMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
