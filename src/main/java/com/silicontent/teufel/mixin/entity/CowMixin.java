@@ -1,6 +1,5 @@
 package com.silicontent.teufel.mixin.entity;
 
-import com.silicontent.teufel.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -13,28 +12,14 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(CowEntity.class)
 public abstract class CowMixin extends AnimalEntity {
-	@Unique
-	boolean passive;
-
 	protected CowMixin(EntityType<? extends AnimalEntity> entityType, World world) {
 		super(entityType, world);
-		this.passive = false;
 	}
 
 	/**
@@ -55,12 +40,15 @@ public abstract class CowMixin extends AnimalEntity {
 	 */
 	@Overwrite
 	public void initGoals() {
-		if (passive) {
-			initPassiveGoals();
-		}
-		else {
-			initHostileGoals();
-		}
+		// lower priority number = higher priority
+		// usually want swim goal at priority 0 so mob doesn't drown
+		this.goalSelector.add(0, new SwimGoal(this));
+		this.goalSelector.add(1, new MeleeAttackGoal(this, 1.0, false));
+		this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
+		this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0));
+		this.goalSelector.add(3, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
+		this.goalSelector.add(4, new LookAroundGoal(this));
+		this.goalSelector.add(4, new FollowParentGoal(this, 1.25));
 	}
 
 	@Override
@@ -75,84 +63,5 @@ public abstract class CowMixin extends AnimalEntity {
 		}
 
 		return bl;
-	}
-
-	// GOAL SWITCHING =============================================================================
-	@Override
-	public void writeCustomDataToNbt(NbtCompound nbt) {
-		super.writeCustomDataToNbt(nbt);
-		nbt.putBoolean("isPassive", this.passive);
-	}
-
-	@Override
-	public void readCustomDataFromNbt(NbtCompound nbt) {
-		super.readCustomDataFromNbt(nbt);
-		this.passive = nbt.getBoolean("isPassive");
-	}
-
-	@Unique
-	public void resetGoals() {
-		// removes all goals from both selectors
-		this.goalSelector.clear(goal -> true);
-		this.targetSelector.clear(goal -> true);
-	}
-
-	@Unique
-	public void initHostileGoals() {
-		resetGoals();
-		this.passive = false;
-
-		// lower priority number = higher priority
-		// usually want swim goal at priority 0 so mob doesn't drown
-		this.goalSelector.add(0, new SwimGoal(this));
-		this.goalSelector.add(1, new MeleeAttackGoal(this, 1.0, false));
-		this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
-		this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0));
-		this.goalSelector.add(3, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
-		this.goalSelector.add(4, new LookAroundGoal(this));
-		this.goalSelector.add(4, new FollowParentGoal(this, 1.25));
-	}
-
-	@Unique
-	public void initPassiveGoals() {
-		resetGoals();
-		this.passive = true;
-
-		this.goalSelector.add(0, new SwimGoal(this));
-		this.goalSelector.add(1, new EscapeDangerGoal(this, 2.0));
-		this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
-		this.goalSelector.add(3, new TemptGoal(this, 1.25, Ingredient.ofItems(Items.WHEAT), false));
-		this.goalSelector.add(4, new FollowParentGoal(this, 1.25));
-		this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0));
-		this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
-		this.goalSelector.add(7, new LookAroundGoal(this));
-	}
-
-	@Inject(method = "interactMob", at = @At("HEAD"), cancellable = true)
-	public void interactMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-		ItemStack itemStack = player.getStackInHand(hand);
-		// change cow's behavior when used on
-		if (!this.getWorld().isClient) {
-			// switch to passive
-			if (itemStack.isOf(ModItems.PEACE_ESSENCE) && !passive) {
-				// switch AI
-				initPassiveGoals();
-				// consume the item
-				if (!player.getAbilities().creativeMode) {
-					itemStack.decrement(1);
-				}
-				cir.setReturnValue(ActionResult.success(this.getWorld().isClient));
-			}
-			// switch to hostile
-			else if (itemStack.isOf(ModItems.PAIN_ESSENCE) && passive) {
-				// switch AI
-				initHostileGoals();
-				// consume the item
-				if (!player.getAbilities().creativeMode) {
-					itemStack.decrement(1);
-				}
-				cir.setReturnValue(ActionResult.success(this.getWorld().isClient));
-			}
-		}
 	}
 }
