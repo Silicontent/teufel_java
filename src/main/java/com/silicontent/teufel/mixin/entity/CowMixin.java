@@ -1,5 +1,6 @@
 package com.silicontent.teufel.mixin.entity;
 
+import com.silicontent.teufel.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -12,9 +13,18 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(CowEntity.class)
 public abstract class CowMixin extends AnimalEntity {
@@ -63,5 +73,38 @@ public abstract class CowMixin extends AnimalEntity {
 		}
 
 		return bl;
+	}
+
+	// BEHAVIOR SWITCHING =========================================================================
+	@Unique
+	public void resetGoals() {
+		this.goalSelector.clear(goal -> true);
+		this.targetSelector.clear(goal -> true);
+	}
+
+	@Unique
+	public void initPassiveGoals() {
+		resetGoals();
+
+		this.goalSelector.add(0, new SwimGoal(this));
+		this.goalSelector.add(1, new EscapeDangerGoal(this, 2.0));
+		this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
+		this.goalSelector.add(3, new TemptGoal(this, 1.25, Ingredient.ofItems(Items.WHEAT), false));
+		this.goalSelector.add(4, new FollowParentGoal(this, 1.25));
+		this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0));
+		this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
+		this.goalSelector.add(7, new LookAroundGoal(this));
+	}
+
+	@Inject(method = "interactMob", at = @At("HEAD"))
+	public void interactMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
+		ItemStack itemStack = player.getStackInHand(hand);
+		if (!this.getWorld().isClient && itemStack.isOf(ModItems.PEACE_ESSENCE)) {
+			initPassiveGoals();
+			// consumes an essence upon use
+			if (!player.isCreative()) {
+				itemStack.decrement(1);
+			}
+		}
 	}
 }
