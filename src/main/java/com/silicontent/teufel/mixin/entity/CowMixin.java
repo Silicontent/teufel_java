@@ -1,5 +1,6 @@
 package com.silicontent.teufel.mixin.entity;
 
+import com.silicontent.teufel.Teufel;
 import com.silicontent.teufel.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -112,14 +113,27 @@ public abstract class CowMixin extends AnimalEntity {
 	@Unique
 	public void updateGoalSelector(ArrayList<PrioritizedGoal> goals) {
 		// remove undesired goals
-		for (PrioritizedGoal g : this.goalSelector.getGoals()) {
+		for (PrioritizedGoal g : goals) {
 			if (!(goals.contains(g) || this.commonGoals.contains(g))) {
+				Teufel.LOGGER.info("removing! {}", g.getGoal().toString());
 				this.removePrioritized(g);
 			}
 		}
+		Teufel.LOGGER.info("remove end {}", this.hostileGoals.size());
 		// add goals from list
 		for (PrioritizedGoal g : goals) {
+			Teufel.LOGGER.info("adding! {}", g.getGoal().toString());
 			this.addPrioritized(g);
+		}
+		Teufel.LOGGER.info("add end");
+	}
+
+	@Unique
+	public void useGoalItem(ArrayList<PrioritizedGoal> goals, PlayerEntity player, ItemStack stack) {
+		updateGoalSelector(goals);
+		// consume an item if not in Creative Mode
+		if (!player.isCreative()) {
+			stack.decrement(1);
 		}
 	}
 
@@ -128,18 +142,10 @@ public abstract class CowMixin extends AnimalEntity {
 		ItemStack itemStack = player.getStackInHand(hand);
 		if (!this.getWorld().isClient) {
 			if (itemStack.isOf(ModItems.PEACE_ESSENCE)) {
-				updateGoalSelector(this.passiveGoals);
-				// consumes an essence upon use
-				if (!player.isCreative()) {
-					itemStack.decrement(1);
-				}
+				useGoalItem(this.passiveGoals, player, itemStack);
 			}
 			else if (itemStack.isOf(ModItems.PAIN_ESSENCE)) {
-				updateGoalSelector(this.hostileGoals);
-				// consumes an essence upon use
-				if (!player.isCreative()) {
-					itemStack.decrement(1);
-				}
+				useGoalItem(this.hostileGoals, player, itemStack);
 			}
 		}
 	}
