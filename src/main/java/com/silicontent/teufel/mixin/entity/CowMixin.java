@@ -28,7 +28,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 @Mixin(CowEntity.class)
 public abstract class CowMixin extends AnimalEntity {
@@ -108,7 +107,7 @@ public abstract class CowMixin extends AnimalEntity {
 
 	@Unique
 	public void removePrioritized(PrioritizedGoal g) {
-		Teufel.LOGGER.info("removing prioritized");
+		Teufel.LOGGER.info("removing prioritized {}", g.getGoal().toString());
 		this.goalSelector.remove(g.getGoal());
 		Teufel.LOGGER.info("removed prioritized");
 	}
@@ -116,15 +115,11 @@ public abstract class CowMixin extends AnimalEntity {
 	@Unique
 	public void updateGoalSelector(ArrayList<PrioritizedGoal> goals) {
 		// remove undesired goals
-		Set<PrioritizedGoal> currentGoals = this.goalSelector.getGoals();
-		for (PrioritizedGoal g : currentGoals) {
-			Teufel.LOGGER.info(g.getGoal().toString());
+		for (PrioritizedGoal g : this.goalSelector.getGoals()) {
 			if (!(goals.contains(g) || this.commonGoals.contains(g))) {
-				Teufel.LOGGER.info("removing! {}", g.getGoal().toString());
 				this.removePrioritized(g);
 			}
 		}
-		Teufel.LOGGER.info("remove end {}", this.hostileGoals.size());
 		// add goals from list
 		for (PrioritizedGoal g : goals) {
 			this.addPrioritized(g);
