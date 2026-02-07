@@ -65,7 +65,7 @@ public class ModItems {
 	public static final Item ULTIMATE_HOE = registerItem("ultimate_hoe",
 			new HoeItem(ModToolMaterial.ENDGAME, 69419, -2.0f, new Item.Settings()));
 	public static final Item COPPER_INJECTION = registerItem("copper_injection",
-			new HoeItem(ModToolMaterial.ENDGAME, 69419, -2.0f, new Item.Settings()));
+			new SwordItem(ModToolMaterial.ENDGAME, 69419, -2.0f, new Item.Settings()));
 
 	private static Item registerItem(String name, Item item) {
 		// register a given mod item into the item registry
