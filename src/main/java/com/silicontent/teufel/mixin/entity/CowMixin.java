@@ -56,7 +56,7 @@ public abstract class CowMixin extends AnimalEntity {
 
 	/**
 	 * @author Silicontent (mod_id: teufel)
-	 * @reason Modifies cow behavior to make it hostile towards the player
+	 * @reason Adds all goals to separate lists, then adds the hostile goals initially.
 	 */
 	@Overwrite
 	public void initGoals() {

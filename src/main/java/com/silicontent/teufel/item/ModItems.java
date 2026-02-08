@@ -17,15 +17,15 @@ public class ModItems {
 	public static final Item REINFORCED_STICK = registerItem("reinforced_stick", new Item(new Item.Settings()));
 	public static final Item WITHERED_BONE = registerItem("withered_bone", new Item(new Item.Settings()));
 	public static final Item OBSIDIAN_FRAGMENT = registerItem("obsidian_fragment", new Item(new Item.Settings()));
-	public static final Item ULTIM_EYE = registerItem("ultim_eye", new TooltipItem(new Item.Settings().rarity(Rarity.UNCOMMON), "tooltip.teufel.ultim_eye"));
+	public static final Item ULTIM_EYE = registerItem("ultim_eye", new TooltipItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
 
 	// essences
-	public static final Item LIFE_ESSENCE = registerItem("life_essence", new TooltipItem(new Item.Settings(), "tooltip.teufel.life_essence"));
-	public static final Item DEATH_ESSENCE = registerItem("death_essence", new TooltipItem(new Item.Settings(), "tooltip.teufel.death_essence"));
-	public static final Item FIRE_ESSENCE = registerItem("fire_essence", new TooltipItem(new Item.Settings(), "tooltip.teufel.fire_essence"));
-	public static final Item WATER_ESSENCE = registerItem("water_essence", new TooltipItem(new Item.Settings(), "tooltip.teufel.water_essence"));
-	public static final Item PEACE_ESSENCE = registerItem("peace_essence", new TooltipItem(new Item.Settings(), "tooltip.teufel.peace_essence"));
-	public static final Item PAIN_ESSENCE = registerItem("pain_essence", new TooltipItem(new Item.Settings(), "tooltip.teufel.pain_essence"));
+	public static final Item LIFE_ESSENCE = registerItem("life_essence", new TooltipItem(new Item.Settings()));
+	public static final Item DEATH_ESSENCE = registerItem("death_essence", new TooltipItem(new Item.Settings()));
+	public static final Item FIRE_ESSENCE = registerItem("fire_essence", new TooltipItem(new Item.Settings()));
+	public static final Item WATER_ESSENCE = registerItem("water_essence", new TooltipItem(new Item.Settings()));
+	public static final Item PEACE_ESSENCE = registerItem("peace_essence", new TooltipItem(new Item.Settings()));
+	public static final Item PAIN_ESSENCE = registerItem("pain_essence", new TooltipItem(new Item.Settings()));
 
 	// ingots and raw ore
 	public static final Item HELLFIRE_CHUNK = registerItem("hellfire_chunk", new Item(new Item.Settings()));

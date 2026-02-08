@@ -3,9 +3,9 @@
 	"package": "com.silicontent.teufel.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"PlayerDrownMixin",
-		"PlayerLavaMixin",
-		"entity.CowMixin"
+		"entity.CowMixin",
+		"player.PlayerDrownMixin",
+		"player.PlayerLavaMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

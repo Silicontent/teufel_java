@@ -1,4 +1,4 @@
-package com.silicontent.teufel.mixin;
+package com.silicontent.teufel.mixin.player;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
