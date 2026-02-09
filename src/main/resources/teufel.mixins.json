@@ -4,6 +4,7 @@
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
 		"entity.CowMixin",
+		"entity.GoalMixin",
 		"player.PlayerDrownMixin",
 		"player.PlayerLavaMixin"
 	],
