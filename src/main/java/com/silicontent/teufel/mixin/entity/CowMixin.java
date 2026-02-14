@@ -1,6 +1,5 @@
 package com.silicontent.teufel.mixin.entity;
 
-import com.silicontent.teufel.Teufel;
 import com.silicontent.teufel.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -28,7 +27,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
-import java.util.function.Predicate;
+import java.util.Objects;
 
 @Mixin(CowEntity.class)
 public abstract class CowMixin extends AnimalEntity {
@@ -108,26 +107,13 @@ public abstract class CowMixin extends AnimalEntity {
 
 	@Unique
 	public void removePrioritized(PrioritizedGoal g) {
-		Teufel.LOGGER.info("removing prioritized {}", g.getGoal().toString());
-		this.goalSelector.remove(g.getGoal());
-		Teufel.LOGGER.info("removed prioritized");
-	}
-
-	@Unique
-	public void clearPrioritized(Predicate<PrioritizedGoal> predicate) {
-		this.goalSelector.getGoals().removeIf(predicate);
+		Objects.requireNonNull(this.getServer()).execute(() -> this.goalSelector.remove(g.getGoal()));
 	}
 
 	@Unique
 	public void updateGoalSelector(ArrayList<PrioritizedGoal> goals) {
 		// remove undesired goals
-		// TODO: convert items in goals from PrioritizedGoal to Goal
-		this.clearPrioritized(g -> !(goals.contains(g) || this.commonGoals.contains(g)));
-//		for (PrioritizedGoal g : this.goalSelector.getGoals()) {
-//			if (!(goals.contains(g) || this.commonGoals.contains(g))) {
-//				this.removePrioritized(g);
-//			}
-//		}
+		this.goalSelector.getGoals().stream().filter(g -> !(goals.contains(g) || this.commonGoals.contains(g))).forEach(this::removePrioritized);
 		// add goals from list
 		for (PrioritizedGoal g : goals) {
 			this.addPrioritized(g);
@@ -143,11 +129,6 @@ public abstract class CowMixin extends AnimalEntity {
 		}
 	}
 
-	@Unique
-	public void printRunning(PrioritizedGoal g) {
-		Teufel.LOGGER.info("Current running goal: {}", g.getGoal().toString());
-	}
-
 	@Inject(method = "interactMob", at = @At("HEAD"))
 	public void interactMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
 		ItemStack itemStack = player.getStackInHand(hand);
@@ -157,13 +138,6 @@ public abstract class CowMixin extends AnimalEntity {
 			}
 			else if (itemStack.isOf(ModItems.PAIN_ESSENCE)) {
 				useGoalItem(this.hostileGoals, player, itemStack);
-			}
-			else if (itemStack.isOf(ModItems.LIFE_ESSENCE)) {
-				// DEBUG: prints entity's current goals and running goals to the log
-				for (PrioritizedGoal g : this.goalSelector.getGoals()) {
-					Teufel.LOGGER.info("Current goal: {}", g.getGoal().toString());
-				}
-				this.goalSelector.getRunningGoals().forEach(this::printRunning);
 			}
 		}
 	}
