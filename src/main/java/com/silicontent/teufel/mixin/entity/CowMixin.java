@@ -1,6 +1,5 @@
 package com.silicontent.teufel.mixin.entity;
 
-import com.silicontent.teufel.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -13,76 +12,53 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.ArrayList;
-import java.util.Objects;
 
 @Mixin(CowEntity.class)
-public abstract class CowMixin extends AnimalEntity {
-	@Unique
-	ArrayList<PrioritizedGoal> commonGoals;
-	@Unique
-	ArrayList<PrioritizedGoal> hostileGoals;
-	@Unique
-	ArrayList<PrioritizedGoal> passiveGoals;
-
+public abstract class CowMixin extends AnimalMixin {
 	protected CowMixin(EntityType<? extends AnimalEntity> entityType, World world) {
 		super(entityType, world);
 	}
 
 	/**
 	 * @author Silicontent (mod_id: teufel)
-	 * @reason Changes cow attributes to allow for hostile behavior.
+	 * @reason Changes cow attributes to fit with new hostile behavior.
 	 */
 	@Overwrite
 	public static DefaultAttributeContainer.Builder createCowAttributes() {
 		return MobEntity.createMobAttributes()
 				.add(EntityAttributes.GENERIC_MAX_HEALTH, 15.0)
 				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 0.1)
-				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.24);
+				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.24)
+				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 25.0);
 	}
 
-	/**
-	 * @author Silicontent (mod_id: teufel)
-	 * @reason Adds all goals to separate lists, then adds the hostile goals initially.
-	 */
-	@Overwrite
-	public void initGoals() {
-		// create goal lists
-		this.commonGoals = new ArrayList<>();
-		this.hostileGoals = new ArrayList<>();
-		this.passiveGoals = new ArrayList<>();
-
-		this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
-
+	@Override
+	public void populateGoals() {
 		// populate goal lists
-		this.commonGoals.add(new PrioritizedGoal(0, new SwimGoal(this)));
-		this.commonGoals.add(new PrioritizedGoal(2, new WanderAroundFarGoal(this, 1.0)));
-		this.commonGoals.add(new PrioritizedGoal(3, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f)));
-		this.commonGoals.add(new PrioritizedGoal(4, new LookAroundGoal(this)));
-		this.commonGoals.add(new PrioritizedGoal(4, new FollowParentGoal(this, 1.25)));
-		this.hostileGoals.add(new PrioritizedGoal(1, new MeleeAttackGoal(this, 1.0, false)));
-		this.passiveGoals.add(new PrioritizedGoal(1, new EscapeDangerGoal(this, 2.0)));
-		this.passiveGoals.add(new PrioritizedGoal(2, new AnimalMateGoal(this, 1.0)));
-		this.passiveGoals.add(new PrioritizedGoal(3, new TemptGoal(this, 1.25, Ingredient.ofItems(Items.WHEAT), false)));
+		this.getCommonGoals().add(new PrioritizedGoal(0, new SwimGoal(this)));
+		this.getCommonGoals().add(new PrioritizedGoal(2, new WanderAroundFarGoal(this, 1.0)));
+		this.getCommonGoals().add(new PrioritizedGoal(3, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f)));
+		this.getCommonGoals().add(new PrioritizedGoal(4, new LookAroundGoal(this)));
+		this.getCommonGoals().add(new PrioritizedGoal(4, new FollowParentGoal((AnimalEntity) (Object) this, 1.25)));
+		this.getHostileGoals().add(new PrioritizedGoal(1, new MeleeAttackGoal(this, 1.0, false)));
+		this.getPassiveGoals().add(new PrioritizedGoal(1, new EscapeDangerGoal(this, 2.0)));
+		this.getPassiveGoals().add(new PrioritizedGoal(2, new AnimalMateGoal((AnimalEntity) (Object) this, 1.0)));
+		this.getPassiveGoals().add(new PrioritizedGoal(3, new TemptGoal(this, 1.25, Ingredient.ofItems(Items.WHEAT), false)));
 
-		// add goals to selector
-		for (PrioritizedGoal g : this.commonGoals) {
-			this.addPrioritized(g);
-		}
-		this.updateGoalSelector(hostileGoals);
+		// adds player as target for cow
+		this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
+	}
+
+	@Override
+	public void initGoals() {
+		// I have no idea why not including this just skips initGoals(), but I really don't care at this point,
+		// and I'm just glad this works right now.
+		super.initGoals();
 	}
 
 	@Override
@@ -97,48 +73,5 @@ public abstract class CowMixin extends AnimalEntity {
 		}
 
 		return bl;
-	}
-
-	// BEHAVIOR SWITCHING =========================================================================
-	@Unique
-	public void addPrioritized(PrioritizedGoal g) {
-		this.goalSelector.add(g.getPriority(), g.getGoal());
-	}
-
-	@Unique
-	public void removePrioritized(PrioritizedGoal g) {
-		Objects.requireNonNull(this.getServer()).execute(() -> this.goalSelector.remove(g.getGoal()));
-	}
-
-	@Unique
-	public void updateGoalSelector(ArrayList<PrioritizedGoal> goals) {
-		// remove undesired goals
-		this.goalSelector.getGoals().stream().filter(g -> !(goals.contains(g) || this.commonGoals.contains(g))).forEach(this::removePrioritized);
-		// add goals from list
-		for (PrioritizedGoal g : goals) {
-			this.addPrioritized(g);
-		}
-	}
-
-	@Unique
-	public void useGoalItem(ArrayList<PrioritizedGoal> goals, PlayerEntity player, ItemStack stack) {
-		updateGoalSelector(goals);
-		// consume an item if not in Creative Mode
-		if (!player.isCreative()) {
-			stack.decrement(1);
-		}
-	}
-
-	@Inject(method = "interactMob", at = @At("HEAD"))
-	public void interactMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-		ItemStack itemStack = player.getStackInHand(hand);
-		if (!this.getWorld().isClient) {
-			if (itemStack.isOf(ModItems.PEACE_ESSENCE)) {
-				useGoalItem(this.passiveGoals, player, itemStack);
-			}
-			else if (itemStack.isOf(ModItems.PAIN_ESSENCE)) {
-				useGoalItem(this.hostileGoals, player, itemStack);
-			}
-		}
 	}
 }
