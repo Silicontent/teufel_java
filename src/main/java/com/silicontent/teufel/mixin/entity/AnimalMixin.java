@@ -2,6 +2,7 @@ package com.silicontent.teufel.mixin.entity;
 
 import com.silicontent.teufel.item.ModItems;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.ActiveTargetGoal;
 import net.minecraft.entity.ai.goal.PrioritizedGoal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
@@ -41,8 +42,10 @@ public abstract class AnimalMixin extends PassiveEntity {
 	}
 
 	@Unique
+	// overridden by other entities to add their own AI goals
 	public void populateGoals() {
-		// overridden by other entities to add their own AI goals
+		// adds player as target for entity, target must be seen by default
+		this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
 	}
 
 	@Override

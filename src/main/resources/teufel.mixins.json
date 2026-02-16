@@ -5,6 +5,7 @@
 	"mixins": [
 		"entity.AnimalMixin",
 		"entity.CowMixin",
+		"entity.PigMixin",
 		"player.PlayerDrownMixin",
 		"player.PlayerLavaMixin"
 	],

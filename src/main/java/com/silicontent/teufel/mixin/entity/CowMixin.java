@@ -26,7 +26,7 @@ public abstract class CowMixin extends AnimalMixin {
 
 	/**
 	 * @author Silicontent (mod_id: teufel)
-	 * @reason Changes cow attributes to fit with new hostile behavior.
+	 * @reason Changes entity attributes to fit with new hostile behavior.
 	 */
 	@Overwrite
 	public static DefaultAttributeContainer.Builder createCowAttributes() {
