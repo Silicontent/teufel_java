@@ -1,4 +1,4 @@
-package com.silicontent.teufel.mixin.entity;
+package com.silicontent.teufel.mixin.entity.passive;
 
 import com.silicontent.teufel.item.ModItems;
 import net.minecraft.entity.EntityType;

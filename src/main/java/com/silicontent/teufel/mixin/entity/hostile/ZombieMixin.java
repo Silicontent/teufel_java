@@ -1,4 +1,4 @@
-package com.silicontent.teufel.mixin.entity;
+package com.silicontent.teufel.mixin.entity.hostile;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -34,8 +34,8 @@ public abstract class ZombieMixin extends HostileEntity {
 	 * @author Silicontent (mod_id: teufel)
 	 * @reason Zombies no longer burn in daylight.
 	 */
-//	@Overwrite
-//	public boolean burnsInDaylight() {
-//		return false;
-//	}
+	@Overwrite
+	public boolean burnsInDaylight() {
+		return false;
+	}
 }
