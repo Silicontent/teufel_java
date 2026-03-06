@@ -16,8 +16,6 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 	// tags that contain all the blocks that can be used when creating a furnace
-	// TODO: replace nether materials in these tags with a whole new upgraded furnace
-	// TODO: alternatively, remove these tags and only allow cobbled deepslate and cobblestone
 	public static final TagKey<Item> INNER_FURNACE_STONES = TagKey.of(RegistryKeys.ITEM, new Identifier(Teufel.MOD_ID, "inner_furnace_stones"));
 	public static final TagKey<Item> CORNER_FURNACE_STONES = TagKey.of(RegistryKeys.ITEM, new Identifier(Teufel.MOD_ID, "corner_furnace_stones"));
 
