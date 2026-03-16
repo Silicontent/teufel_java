@@ -25,7 +25,7 @@
 	"death.attack.fallingBlock.player": "%1$s was ruthlessly tortured by %2$s.",
 	"death.attack.fallingStalactite": "%1$s learned about Phineas Gage.",
 	"death.attack.fallingStalactite.player": "%1$s was split in two by %2$s... that sounded weird. Oh well.",
-	"death.attack.fireball": "%1$s was nuked from by %2$s.",
+	"death.attack.fireball": "%1$s was nuked from above by %2$s.",
 	"death.attack.fireball.item": "%1$s was nuked from above by %2$s using %3$s.",
 	"death.attack.fireworks": "%1$s celebrated the 4th of July a little too hard.",
 	"death.attack.fireworks.item": "%1$s became a true 'Murican from %3$s by %2$s.",
