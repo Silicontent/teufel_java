@@ -6,12 +6,13 @@
 		"entity.boss.WardenMixin",
 		"entity.hostile.ZombieMixin",
 		"entity.other.EggMixin",
-		"entity.passive.AnimalMixin",
+		"entity.other.InstantDrowningMixin",
+		"entity.other.InstantLavaDeathMixin",
 		"entity.passive.ChickenMixin",
 		"entity.passive.CowMixin",
+		"entity.passive.HostileAnimalMixin",
 		"entity.passive.PigMixin",
-		"player.PlayerDrownMixin",
-		"player.PlayerLavaMixin"
+		"entity.passive.SheepMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 @Mixin(AnimalEntity.class)
-public abstract class AnimalMixin extends PassiveEntity {
+public abstract class HostileAnimalMixin extends PassiveEntity {
 	@Unique
 	// AI goals that the entity has no matter its current state
 	private ArrayList<PrioritizedGoal> commonGoals;
@@ -37,7 +37,7 @@ public abstract class AnimalMixin extends PassiveEntity {
 	// determines if the entity is currently passive or not
 	private boolean passive;
 
-	protected AnimalMixin(EntityType<? extends PassiveEntity> entityType, World world) {
+	protected HostileAnimalMixin(EntityType<? extends PassiveEntity> entityType, World world) {
 		super(entityType, world);
 	}
 

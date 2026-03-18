@@ -1,4 +1,4 @@
-package com.silicontent.teufel.mixin.player;
+package com.silicontent.teufel.mixin.entity.other;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(LivingEntity.class)
-public abstract class PlayerDrownMixin extends Entity {
-	public PlayerDrownMixin(EntityType<?> type, World world) {
+public abstract class InstantDrowningMixin extends Entity {
+	public InstantDrowningMixin(EntityType<?> type, World world) {
 		super(type, world);
 	}
 

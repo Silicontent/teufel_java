@@ -10,24 +10,23 @@ import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.world.World;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(ChickenEntity.class)
-public abstract class ChickenMixin extends AnimalMixin {
+public abstract class ChickenMixin extends HostileAnimalMixin {
 	/*
 	NOTE: The chicken's hostile behavior is entirely managed by the ChickenShootGoal
 	 located at com/silicontent/teufel/entity/goal/ChickenShootGoal
 	*/
 
 	@Shadow
-	private static final Ingredient BREEDING_INGREDIENT = Ingredient.ofItems(
-			Items.WHEAT_SEEDS, Items.MELON_SEEDS, Items.PUMPKIN_SEEDS, Items.BEETROOT_SEEDS, Items.TORCHFLOWER_SEEDS, Items.PITCHER_POD
-	);
+	@Final
+	private static Ingredient BREEDING_INGREDIENT;
 
 	protected ChickenMixin(EntityType<? extends PassiveEntity> entityType, World world) {
 		super(entityType, world);

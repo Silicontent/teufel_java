@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(PigEntity.class)
-public abstract class PigMixin extends AnimalMixin {
+public abstract class PigMixin extends HostileAnimalMixin {
 	@Shadow
 	private static final Ingredient BREEDING_INGREDIENT = Ingredient.ofItems(Items.CARROT, Items.POTATO, Items.BEETROOT);
 

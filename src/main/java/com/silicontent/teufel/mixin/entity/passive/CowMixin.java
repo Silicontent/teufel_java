@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(CowEntity.class)
-public abstract class CowMixin extends AnimalMixin {
+public abstract class CowMixin extends HostileAnimalMixin {
 	protected CowMixin(EntityType<? extends AnimalEntity> entityType, World world) {
 		super(entityType, world);
 	}
