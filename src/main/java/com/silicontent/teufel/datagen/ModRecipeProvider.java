@@ -63,6 +63,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.criterion(hasItem(Items.GRAVEL), conditionsFromItem(Items.GRAVEL))
 				.offerTo(exporter, "flint_from_gravel");
 
+		// rotten flesh to leather recipe
+		offerSmelting(exporter, List.of(Items.ROTTEN_FLESH), RecipeCategory.MISC, Items.LEATHER, 0.7f, 200, "leather");
+
 		// modded ingot blocks
 		offerCompactBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, ModBlocks.HELLFIRE_BLOCK, ModItems.HELLFIRE_INGOT);
 		offerCompactBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, ModBlocks.TERMINITE_BLOCK, ModItems.TERMINITE_INGOT);

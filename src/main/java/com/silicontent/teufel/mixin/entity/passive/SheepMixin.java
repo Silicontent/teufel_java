@@ -36,7 +36,7 @@ public abstract class SheepMixin extends AnimalEntity {
 
 	@Inject(method = "initGoals", at = @At("TAIL"))
 	public void fleeFromPlayer(CallbackInfo ci) {
-		// cause sheep to run away from the player at mach 5
+		// make sheep run away from the player at mach 5
 		this.goalSelector.add(1, new FleeEntityGoal<>(this, PlayerEntity.class, 10.0f, 1.0d, 1.5d));
 	}
 
