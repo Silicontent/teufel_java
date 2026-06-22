@@ -8,6 +8,7 @@
 		"entity.other.EggMixin",
 		"entity.other.InstantDrowningMixin",
 		"entity.other.InstantLavaDeathMixin",
+		"entity.passive.BeeMixin",
 		"entity.passive.ChickenMixin",
 		"entity.passive.CowMixin",
 		"entity.passive.HostileAnimalMixin",
