@@ -15,7 +15,8 @@ public class InstantLavaDeathMixin {
 		//  in-game, so unless there are other entities that need this functionality,
 		//  I'll leave it be for now.
 		// instantly kill certain entities when they touch lava
-		if ((Object) this instanceof PlayerEntity || (Object) this instanceof SheepEntity) {
+		if ((Object) this instanceof PlayerEntity
+				|| (Object) this instanceof SheepEntity) {
 			return Float.MAX_VALUE;
 		}
 		return val;
