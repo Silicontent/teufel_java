@@ -43,6 +43,7 @@ public class ModItemGroups {
 						entries.add(ModItems.WITHERED_BONE);
 						entries.add(ModItems.OBSIDIAN_FRAGMENT);
 						entries.add(ModItems.ULTIM_EYE);
+						entries.add(ModItems.VOODOO_TOTEM);
 
 						entries.add(ModItems.LIFE_ESSENCE);
 						entries.add(ModItems.DEATH_ESSENCE);
@@ -82,6 +83,7 @@ public class ModItemGroups {
 						entries.add(ModItems.TEUFEL);
 						entries.add(ModItems.ULTIMATE_HOE);
 						entries.add(ModItems.COPPER_INJECTION);
+						entries.add(ModItems.EMERALD_SWORD);
 
 					})).build());
 

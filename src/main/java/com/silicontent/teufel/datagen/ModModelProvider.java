@@ -58,6 +58,7 @@ public class ModModelProvider extends FabricModelProvider {
 		itemModelGenerator.register(ModItems.TERMINITE_INGOT, Models.GENERATED);
 		itemModelGenerator.register(ModItems.SCULKEN_INGOT, Models.GENERATED);
 		itemModelGenerator.register(ModItems.DEMONITE_INGOT, Models.GENERATED);
+		itemModelGenerator.register(ModItems.VOODOO_TOTEM, Models.GENERATED);
 
 		itemModelGenerator.register(ModItems.DIRT_BALL, Models.GENERATED);
 
@@ -79,5 +80,6 @@ public class ModModelProvider extends FabricModelProvider {
 		itemModelGenerator.register(ModItems.TEUFEL, Models.HANDHELD);
 		itemModelGenerator.register(ModItems.ULTIMATE_HOE, Models.HANDHELD);
 		itemModelGenerator.register(ModItems.COPPER_INJECTION, Models.HANDHELD);
+		itemModelGenerator.register(ModItems.EMERALD_SWORD, Models.HANDHELD);
 	}
 }

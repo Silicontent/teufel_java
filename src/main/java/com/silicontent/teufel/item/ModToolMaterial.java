@@ -29,7 +29,9 @@ public enum ModToolMaterial implements ToolMaterial {
 	DEMONITE(7, 6660, 1.0f, 0.0f, 50,
 			() -> Ingredient.ofItems(ModItems.DEMONITE_INGOT)),
 	ENDGAME(7, 99999, 1.0f, 0.0f, 50,
-			() -> Ingredient.ofItems(Items.NETHER_STAR));
+			() -> Ingredient.ofItems(Items.NETHER_STAR)),
+	EMERALD(-1, 0, 1.0f, 0.0f, 0,
+					() -> Ingredient.ofItems(Items.EMERALD));
 
 	// tool tier
 	private final int miningLevel;

@@ -300,5 +300,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.criterion(hasItem(Items.COPPER_BLOCK), conditionsFromItem(Items.COPPER_BLOCK))
 				.criterion(hasItem(Items.GLASS), conditionsFromItem(Items.GLASS))
 				.offerTo(exporter, getRecipeName(ModItems.COPPER_INJECTION));
+
+		ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.EMERALD_SWORD, 1)
+				.pattern("E")
+				.pattern("E")
+				.pattern("S")
+				.input('E', Items.EMERALD)
+				.input('S', Items.STICK)
+				.criterion(hasItem(Items.EMERALD), conditionsFromItem(Items.EMERALD))
+				.criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+				.offerTo(exporter, getRecipeName(ModItems.EMERALD_SWORD));
 	}
 }

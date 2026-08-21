@@ -39,6 +39,8 @@ public abstract class CowMixin extends HostileAnimalMixin {
 
 	@Override
 	public void populateGoals() {
+		super.populateGoals();
+
 		// populate goal lists
 		this.getCommonGoals().add(new PrioritizedGoal(0, new SwimGoal(this)));
 		this.getCommonGoals().add(new PrioritizedGoal(2, new WanderAroundFarGoal(this, 1.0)));
@@ -49,9 +51,6 @@ public abstract class CowMixin extends HostileAnimalMixin {
 		this.getPassiveGoals().add(new PrioritizedGoal(1, new EscapeDangerGoal(this, 2.0)));
 		this.getPassiveGoals().add(new PrioritizedGoal(2, new AnimalMateGoal((AnimalEntity) (Object) this, 1.0)));
 		this.getPassiveGoals().add(new PrioritizedGoal(3, new TemptGoal(this, 1.25, Ingredient.ofItems(Items.WHEAT), false)));
-
-		// adds player as target for cow
-		this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
 	}
 
 	@Override

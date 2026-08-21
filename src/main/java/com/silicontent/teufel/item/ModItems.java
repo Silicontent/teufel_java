@@ -2,6 +2,7 @@ package com.silicontent.teufel.item;
 
 import com.silicontent.teufel.Teufel;
 import com.silicontent.teufel.item.custom.TooltipItem;
+import com.silicontent.teufel.item.custom.VoodooTotemItem;
 import com.silicontent.teufel.item.weapons.*;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
@@ -66,6 +67,10 @@ public class ModItems {
 			new HoeItem(ModToolMaterial.ENDGAME, 69419, -2.0f, new Item.Settings()));
 	public static final Item COPPER_INJECTION = registerItem("copper_injection",
 			new SwordItem(ModToolMaterial.ENDGAME, 69419, -2.0f, new Item.Settings()));
+	public static final Item EMERALD_SWORD = registerItem("emerald_sword",
+			new SwordItem(ModToolMaterial.EMERALD, 0, -2.0f, new Item.Settings().maxDamage(1)));
+
+	public static final Item VOODOO_TOTEM = registerItem("voodoo_totem", new VoodooTotemItem(new Item.Settings()));
 
 	private static Item registerItem(String name, Item item) {
 		// register a given mod item into the item registry

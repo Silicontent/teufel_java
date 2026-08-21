@@ -38,8 +38,9 @@
 	"item.teufel.terminite_ingot": "Terminite Ingot",
 	"item.teufel.sculken_ingot": "Sculken Ingot",
 	"item.teufel.demonite_ingot": "Demonite Ingot",
+	"item.teufel.voodoo_totem": "Voodoo Totem",
 
-	"item.teufel.dirt_ball": "Fistfull of Soil",
+	"item.teufel.dirt_ball": "Fistfull o' Dirt",
 	"item.teufel.flint_dagger": "Flint Dagger",
 	"item.teufel.copper_dagger": "Copper Dagger",
 	"item.teufel.meteor_shard": "Meteor Shard",
@@ -54,6 +55,7 @@
 	"item.teufel.teufel": "Teufel",
 	"item.teufel.ultimate_hoe": "Ultimate Hoe",
 	"item.teufel.copper_injection": "Copper Injection",
+	"item.teufel.emerald_sword": "Emerald Sword",
 
 	"itemgroup.teufel.blocks_materials": "Teufel Blocks & Items",
 	"itemgroup.teufel.weapons": "Teufel Weapons",
@@ -72,5 +74,6 @@
 	"tooltip.teufel.flint_dagger": "§7§o\"Why does this seem familiar...?\"",
 	"tooltip.teufel.copper_dagger": "§7§o\"I don't want to talk about it.\"",
 	"tooltip.teufel.meteor_shard": "§7§o\"Who needs hand warmers with a sword like this?\"",
-	"tooltip.teufel.frostbite": "§7§o\"Cool and refreshing for nobody but you.\""
+	"tooltip.teufel.frostbite": "§7§o\"Cool and refreshing for nobody but you.\"",
+	"tooltip.teufel.emerald_sword": "§7§o\"Toxic to small animals.\""
 }

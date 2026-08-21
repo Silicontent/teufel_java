@@ -4,6 +4,7 @@
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
 		"entity.boss.WardenMixin",
+		"entity.hostile.SilverfishMixin",
 		"entity.hostile.ZombieMixin",
 		"entity.other.EggMixin",
 		"entity.other.InstantDrowningMixin",
@@ -13,6 +14,7 @@
 		"entity.passive.CatMixin",
 		"entity.passive.ChickenMixin",
 		"entity.passive.CowMixin",
+		"entity.passive.DolphinMixin",
 		"entity.passive.HostileAnimalMixin",
 		"entity.passive.PigMixin",
 		"entity.passive.SheepMixin"
