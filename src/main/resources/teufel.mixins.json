@@ -17,7 +17,8 @@
 		"entity.passive.DolphinMixin",
 		"entity.passive.HostileAnimalMixin",
 		"entity.passive.PigMixin",
-		"entity.passive.SheepMixin"
+		"entity.passive.SheepMixin",
+		"item.TooltipMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

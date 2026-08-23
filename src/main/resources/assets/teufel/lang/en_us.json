@@ -62,18 +62,20 @@
 
 
 
-	"tooltip.teufel.ultim_eye": "§7Peers through the world to find hidden locations.",
-	"tooltip.teufel.life_essence": "§7§o\"Concentrated, malleable energy.\"",
-	"tooltip.teufel.death_essence": "§7§o\"Holding this fills you with dread.\"",
-	"tooltip.teufel.fire_essence": "§7§o\"Provides protection from extreme heat.\"",
-	"tooltip.teufel.water_essence": "§7§o\"Oxygen-rich and cool to the touch.\"",
-	"tooltip.teufel.peace_essence": "§7§o\"A remnant of what once was.\"",
-	"tooltip.teufel.pain_essence": "§7§o\"The manifestation of this world's blight.\"",
+	"tooltip.teufel.ultim_eye": "Peers through the world to find hidden locations.",
+	"tooltip.teufel.voodoo_totem": "Bind this totem to a player to use.\nVanishes on use.",
 
-	"tooltip.teufel.dirt_ball": "§7§o\"They once called me... the Dirt Man.\"",
-	"tooltip.teufel.flint_dagger": "§7§o\"Why does this seem familiar...?\"",
-	"tooltip.teufel.copper_dagger": "§7§o\"I don't want to talk about it.\"",
-	"tooltip.teufel.meteor_shard": "§7§o\"Who needs hand warmers with a sword like this?\"",
-	"tooltip.teufel.frostbite": "§7§o\"Cool and refreshing for nobody but you.\"",
-	"tooltip.teufel.emerald_sword": "§7§o\"Toxic to small animals.\""
+	"tooltip.teufel.life_essence": "§o\"Concentrated, malleable energy.\"",
+	"tooltip.teufel.death_essence": "§o\"Holding this fills you with dread.\"",
+	"tooltip.teufel.fire_essence": "§o\"Provides protection from extreme heat.\"",
+	"tooltip.teufel.water_essence": "§o\"Oxygen-rich and cool to the touch.\"",
+	"tooltip.teufel.peace_essence": "§o\"A remnant of what once was.\"",
+	"tooltip.teufel.pain_essence": "§o\"The manifestation of this world's blight.\"",
+
+	"tooltip.teufel.dirt_ball": "§o\"They once called me... the Dirt Man.\"",
+	"tooltip.teufel.flint_dagger": "§o\"Why does this seem familiar...?\"",
+	"tooltip.teufel.copper_dagger": "§o\"I don't want to talk about it.\"",
+	"tooltip.teufel.meteor_shard": "§o\"Who needs hand warmers with a sword like this?\"",
+	"tooltip.teufel.frostbite": "§o\"Cool and refreshing for nobody but you.\"",
+	"tooltip.teufel.emerald_sword": "§o\"Toxic to small animals.\""
 }

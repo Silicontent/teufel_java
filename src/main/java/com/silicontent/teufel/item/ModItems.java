@@ -1,7 +1,6 @@
 package com.silicontent.teufel.item;
 
 import com.silicontent.teufel.Teufel;
-import com.silicontent.teufel.item.custom.TooltipItem;
 import com.silicontent.teufel.item.custom.VoodooTotemItem;
 import com.silicontent.teufel.item.weapons.*;
 import net.minecraft.item.AxeItem;
@@ -18,15 +17,16 @@ public class ModItems {
 	public static final Item REINFORCED_STICK = registerItem("reinforced_stick", new Item(new Item.Settings()));
 	public static final Item WITHERED_BONE = registerItem("withered_bone", new Item(new Item.Settings()));
 	public static final Item OBSIDIAN_FRAGMENT = registerItem("obsidian_fragment", new Item(new Item.Settings()));
-	public static final Item ULTIM_EYE = registerItem("ultim_eye", new TooltipItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
+	public static final Item ULTIM_EYE = registerItem("ultim_eye", new Item(new Item.Settings().rarity(Rarity.UNCOMMON)));
+	public static final Item VOODOO_TOTEM = registerItem("voodoo_totem", new VoodooTotemItem(new Item.Settings()));
 
 	// essences
-	public static final Item LIFE_ESSENCE = registerItem("life_essence", new TooltipItem(new Item.Settings()));
-	public static final Item DEATH_ESSENCE = registerItem("death_essence", new TooltipItem(new Item.Settings()));
-	public static final Item FIRE_ESSENCE = registerItem("fire_essence", new TooltipItem(new Item.Settings()));
-	public static final Item WATER_ESSENCE = registerItem("water_essence", new TooltipItem(new Item.Settings()));
-	public static final Item PEACE_ESSENCE = registerItem("peace_essence", new TooltipItem(new Item.Settings()));
-	public static final Item PAIN_ESSENCE = registerItem("pain_essence", new TooltipItem(new Item.Settings()));
+	public static final Item LIFE_ESSENCE = registerItem("life_essence", new Item(new Item.Settings()));
+	public static final Item DEATH_ESSENCE = registerItem("death_essence", new Item(new Item.Settings()));
+	public static final Item FIRE_ESSENCE = registerItem("fire_essence", new Item(new Item.Settings()));
+	public static final Item WATER_ESSENCE = registerItem("water_essence", new Item(new Item.Settings()));
+	public static final Item PEACE_ESSENCE = registerItem("peace_essence", new Item(new Item.Settings()));
+	public static final Item PAIN_ESSENCE = registerItem("pain_essence", new Item(new Item.Settings()));
 
 	// ingots and raw ore
 	public static final Item HELLFIRE_CHUNK = registerItem("hellfire_chunk", new Item(new Item.Settings()));
@@ -69,8 +69,6 @@ public class ModItems {
 			new SwordItem(ModToolMaterial.ENDGAME, 69419, -2.0f, new Item.Settings()));
 	public static final Item EMERALD_SWORD = registerItem("emerald_sword",
 			new SwordItem(ModToolMaterial.EMERALD, 0, -2.0f, new Item.Settings().maxDamage(1)));
-
-	public static final Item VOODOO_TOTEM = registerItem("voodoo_totem", new VoodooTotemItem(new Item.Settings()));
 
 	private static Item registerItem(String name, Item item) {
 		// register a given mod item into the item registry
