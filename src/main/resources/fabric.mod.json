@@ -3,12 +3,12 @@
 	"id": "teufel",
 	"version": "${version}",
 	"name": "Teufel Sechs: The Ultimatum",
-	"description": "You are making a terrible mistake.",
+	"description": "You are making a terrible mistake.\nThis mod completely overhauls Minecraft to make it as difficult as humanly possible. It should not be played with other content mods.",
 	"authors": [
 		"Silicontent"
 	],
 	"contact": {
-		"homepage": "https://sites.google.com/view/silicontent",
+		"homepage": "https://silicontent.co",
 		"sources": "https://github.com/Silicontent/teufel_java"
 	},
 	"license": "GPL-2.0",
